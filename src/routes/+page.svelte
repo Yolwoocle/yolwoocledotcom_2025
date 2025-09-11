@@ -4,10 +4,12 @@
 	import Overtitle from './Overtitle.svelte';
 
 	import BigStarButton from './BigStarButton.svelte';
+	import TextButton from './TextButton.svelte';
+	import IconButton from './IconButton.svelte';
 </script>
 
 <div class="page">
-    <div class="content">
+    <div class="titles">
         <Overtitle text="Léo Bernard • 曹宇" />
         <Title text="Yolwoocle"/>
         <Subtitle text="Game dev & artist from France" />
@@ -21,26 +23,61 @@
     <div class="nav nav-other">
         <BigStarButton href="#" buttonStyle="3" text="Other"/>
     </div> 
-</div>
-
-<!-- <div class="nav">
-    <button> About </button>
-</div>
-
-<div class="nav">
-    <div>
-        <button>E-mail</button>
-        <button>itch.io</button>
-        <button>Twitter</button>
-        <button>Bluesky</button>
-        <button>Instagram</button>
-        <button>GitHub</button>
-        <button>LinkedIn</button>
+    
+    <div class="nav">
+        <TextButton text="About" --mainColor="var(--white-main)" --secColor="var(--white-sec)" --shadColor="var(--white-shad)" />
     </div>
-</div> -->
+    
+    <div class="nav nav-socials">
+        <IconButton 
+            icon="/src/lib/assets/logos/email-white.svg"
+            alt="email"
+            --mainColor="var(--main-dark)" 
+            --secColor="var(--main-dark-shad)" 
+            --shadColor="var(--main-dark-shad)" 
+        />
+        <IconButton 
+            icon="/src/lib/assets/logos/bluesky-white.svg"
+            alt="bluesky"
+            --mainColor="var(--main-dark)" 
+            --secColor="var(--main-dark-shad)" 
+            --shadColor="var(--main-dark-shad)" 
+        />
+        <IconButton 
+            icon="/src/lib/assets/logos/twitter-white.svg"
+            alt="twitter/x"
+            --mainColor="var(--main-dark)" 
+            --secColor="var(--main-dark-shad)" 
+            --shadColor="var(--main-dark-shad)" 
+        />
+        <IconButton 
+            icon="/src/lib/assets/logos/itchio-white.svg"
+            alt="itchio"
+            --mainColor="var(--main-dark)" 
+            --secColor="var(--main-dark-shad)" 
+            --shadColor="var(--main-dark-shad)" 
+        />
+        <IconButton 
+            icon="/src/lib/assets/logos/github-white.svg"
+            alt="github"
+            --mainColor="var(--main-dark)" 
+            --secColor="var(--main-dark-shad)" 
+            --shadColor="var(--main-dark-shad)" 
+        />
+        
+    </div>
+</div>
 
 <style>
-    .content {
+    .page {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .titles {
         text-align: center;
     }
 
@@ -61,18 +98,22 @@
         top: -20px;
     }
 
+    .nav-socials {
+        margin-top: 20px;
+        gap: 10px;
+    }
+
 
     @keyframes constantMovement {
         0%{
             background-position: 0px 0px;
         }
         100% {
-            background-position: 0px 181.02px;
+            background-position: 0px 110px;
         }
     }
 
     .page {
-        /* Thanks to https://stripesgenerator.com/ */
         margin: 0;
 
         width: 100%;
@@ -80,8 +121,8 @@
 
         background-position: 0px;
         background-image: linear-gradient(135deg, var(--green-main) 25%, var(--green-sec) 25%, var(--green-sec) 50%, var(--green-main) 50%, var(--green-main) 75%, var(--green-sec) 75%, var(--green-sec) 100%);
-        background-size: 90px 90px;
+        background-size: 110px 110px;
         
-        animation: constantMovement 5s linear infinite;
+        animation: constantMovement 7s linear infinite;
     }
 </style>

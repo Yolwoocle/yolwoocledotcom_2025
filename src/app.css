@@ -7,7 +7,7 @@
     --main-dark: #32477D;
     --main-dark-shad: #2A3264;
 
-    --transp-shad: #0000004e;
+    --transp-shad: #00000039;
 
     --green-main: #adcd81;
     --green-sec: #9cc079;
@@ -27,6 +27,11 @@
     --pink-sec: #D57487;
     --pink-shad: #B85171;
     --pink-text: #B85171;
+
+    --white-main: #ffffff;
+    --white-sec: #C4D0D7;
+    --white-shad: #99A0B2;
+    --white-text: #99A0B2;
 }
 
 h1, h2, h3, h4, h5, h6, p, button, a {

@@ -13,7 +13,7 @@
                 <path d="M162 29L199.4 46.8936L240.175 54.4007L259.915 90.8604L288.491 120.901L283.03 162L288.491 203.099L259.915 233.14L240.175 269.599L199.4 277.106L162 295L124.6 277.106L83.8246 269.599L64.0847 233.14L35.5095 203.099L40.97 162L35.5095 120.901L64.0847 90.8604L83.8246 54.4007L124.6 46.8936L162 29Z" fill="#97D1C1" stroke="#67ABB4" stroke-width="10"/>
             {:else if buttonStyle == 3}
                 <path d="M147.5 19.9189C156.473 14.7386 167.527 14.7386 176.5 19.9189L277.796 78.4023C286.768 83.5827 292.296 93.1559 292.296 103.517V220.483C292.296 230.844 286.768 240.417 277.796 245.598L176.5 304.081C167.527 309.261 156.473 309.261 147.5 304.081L46.2041 245.598C37.2315 240.417 31.7041 230.844 31.7041 220.483V103.517C31.7041 93.1559 37.2315 83.5827 46.2041 78.4023L147.5 19.9189Z" fill="#EAA6A7" stroke="#D57487" stroke-width="20"/>
-                <path d="M152.5 61.4848C158.379 58.0908 165.621 58.0908 171.5 61.4848L244.299 103.515C250.177 106.909 253.799 113.182 253.799 119.97V204.03C253.799 210.818 250.177 217.091 244.299 220.485L171.5 262.515C165.621 265.909 158.379 265.909 152.5 262.515L79.7013 220.485C73.8227 217.091 70.2013 210.818 70.2013 204.03V119.97C70.2013 113.182 73.8227 106.909 79.7013 103.515L152.5 61.4848Z" fill="#EAA6A7" stroke="#D57487" stroke-width="20"/>
+                <path d="M152.5 61.4848C158.379 58.0908 165.621 58.0908 171.5 61.4848L244.299 103.515C250.177 106.909 253.799 113.182 253.799 119.97V204.03C253.799 210.818 250.177 217.091 244.299 220.485L171.5 262.515C165.621 265.909 158.379 265.909 152.5 262.515L79.7013 220.485C73.8227 217.091 70.2013 210.818 70.2013 204.03V119.97C70.2013 113.182 73.8227 106.909 79.7013 103.515L152.5 61.4848Z" fill="#EAA6A7" stroke="#D57487" stroke-width="15"/>
 
             {/if}
         </g>
@@ -45,8 +45,8 @@
 	}
     
     .button-style-3 {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
 
     .star-shape {
@@ -204,5 +204,71 @@
         
         text-shadow: 
             1px 4px 0 var(--transp-shad);
+    }
+
+
+    /********************************/
+    
+    .star-button:active .star-shape-group {
+        transform: rotate(60deg);
+    }
+
+    .star-button:active .star-shape-style-1 {
+        filter: 
+            drop-shadow( 0px 2px 0 var(--yellow-shad) )
+            drop-shadow( 0px 2px 0 var(--yellow-shad) )
+            drop-shadow( 0px 2px 0 var(--yellow-shad) )
+            drop-shadow( 0px 2px 0 var(--yellow-shad) )
+            drop-shadow( 0px 2px 0 var(--yellow-shad) )
+            drop-shadow( 2px 5px 0 var(--transp-shad) );
+    }
+
+    
+    .star-button:active .star-shape-style-2 {
+        filter: 
+            drop-shadow( 0px 1px 0 var(--blue-shad) )
+            drop-shadow( 0px 1px 0 var(--blue-shad) )
+            drop-shadow( 0px 1px 0 var(--blue-shad) )
+            drop-shadow( 0px 1px 0 var(--blue-shad) )
+            drop-shadow( 0px 1px 0 var(--blue-shad) )
+            
+            drop-shadow( 0px 1px 0 var(--blue-shad) )
+            drop-shadow( 0px 1px 0 var(--blue-shad) )
+            drop-shadow( 0px 1px 0 var(--blue-shad) )
+            drop-shadow( 0px 1px 0 var(--blue-shad) )
+            drop-shadow( 0px 1px 0 var(--blue-shad) )
+            drop-shadow( 2px 5px 0 var(--transp-shad) );
+    }
+
+    
+    .star-button:active .star-shape-style-3 {
+        filter: 
+            drop-shadow( 0px 3px 0 var(--pink-shad) )
+            drop-shadow( 0px 3px 0 var(--pink-shad) )
+            drop-shadow( 0px 4px 0 var(--pink-shad) )
+            drop-shadow( 1px 5px 0 var(--transp-shad))
+        ;
+    }
+    
+    .star-button:active .star-shape-style-1, .star-button:active .star-shape-style-2{
+        top: 10px;
+    }
+    
+    .star-button:active .star-shape-style-3{
+        top: 6px;
+    }
+
+    .star-button:active .text-style-1,.star-button:active .text-style-2 {
+        top: calc(50% + 10px);
+        
+        text-shadow: 
+            1px 1px 0 var(--transp-shad);
+    }
+    
+    .star-button:active .text-style-3 {
+        top: calc(50% + 6px);
+        
+        text-shadow: 
+            1px 1px 0 var(--transp-shad);
     }
 </style>

@@ -8,7 +8,7 @@
     p {
         color: var(--main-dark);
 
-        font-size: 20px;
+        font-size: 30px;
         font-weight: 600;
         margin: 0;
         
