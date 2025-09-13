@@ -20,6 +20,6 @@
             0px 6px 0 var(--main-dark-shad),
             0px 8px 0 var(--main-dark-shad),
             0px 10px 0 var(--main-dark-shad),
-            2px 9px 0 var(--transp-shad);
+            2px 15px 0 var(--transp-shad);
     }
 </style>

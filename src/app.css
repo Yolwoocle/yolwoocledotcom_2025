@@ -8,7 +8,7 @@
     --main-dark: #32477D;
     --main-dark-shad: #2A3264;
 
-    --transp-shad: #00000039;
+    --transp-shad: hsla(0, 0%, 0%, 0.224);
 
     --green-main: #adcd81;
     --green-sec: #9cc079;

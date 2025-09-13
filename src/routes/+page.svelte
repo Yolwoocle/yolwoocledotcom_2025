@@ -16,12 +16,12 @@
     </div>
     
     <div class="nav nav-main">
-        <BigStarButton href="#" buttonStyle="1" text="Art"/>
-        <BigStarButton href="#" buttonStyle="2" text="Games"/>
+        <BigStarButton href="#" buttonStyle={1} text="Games"/>
+        <BigStarButton href="#" buttonStyle={2} text="Art"/>
     </div>
     
     <div class="nav nav-other">
-        <BigStarButton href="#" buttonStyle="3" text="Other"/>
+        <BigStarButton href="#" buttonStyle={3} text="Other"/>
     </div> 
     
     <div class="nav">
@@ -95,7 +95,9 @@
 
     .nav-other {
         position: relative;
-        top: -20px;
+        top: -60px;
+
+        height: 130px;
     }
 
     .nav-socials {

@@ -72,24 +72,18 @@
             4px 28px 0px var(--transp-shad)
         ;
     }
-    
-    .text {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        
-        font-size: 25px;
 
-        color: var(--shadColor);
-        
-        top: calc(50% - 2px);
-        left: 50%;
+    .container:active .button {
+        top: 5px;
 
-        transition: 
-            top 0.3s var(--ease-out-back),
-            text-shadow 0.3s var(--ease-out-back-soft);
+        box-shadow:
+            inset 0px 0px 0px 5px var(--secColor),
+            0px 1px 0px var(--shadColor),
+            0px 2px 0px var(--shadColor),
+            0px 3px 0px var(--shadColor),
+            0px 4px 0px var(--shadColor),
+            0px 5px 0px var(--shadColor),
+            1px 8px 0px var(--transp-shad)
+        ;
     }
-
-    /********************************/
-    /* Animation */
-    /********************************/
 </style>

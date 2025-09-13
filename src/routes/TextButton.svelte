@@ -70,6 +70,22 @@
             4px 28px 0px var(--transp-shad)
         ;
     }
+
+    .container:active .button {
+        top: 3px;
+
+        box-shadow:
+            inset 0px 0px 0px 5px var(--secColor),
+            inset 0px 0px 0px 10px var(--mainColor),
+            inset 0px 0px 0px 15px var(--secColor),
+            0px 1px 0px var(--shadColor),
+            0px 2px 0px var(--shadColor),
+            0px 3px 0px var(--shadColor),
+            0px 4px 0px var(--shadColor),
+            0px 7px 0px var(--shadColor),
+            1px 10px 0px var(--transp-shad)
+        ;
+    }
     
     .text {
         position: absolute;
