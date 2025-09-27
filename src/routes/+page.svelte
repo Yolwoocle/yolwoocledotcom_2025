@@ -25,13 +25,27 @@
     </div> 
     
     <div class="nav">
-        <TextButton text="About" --mainColor="var(--white-main)" --secColor="var(--white-sec)" --shadColor="var(--white-shad)" />
+        <TextButton 
+            text="About" 
+            --mainColor="var(--white-main)" 
+            --secColor="var(--white-sec)" 
+            --shadColor="var(--white-shad)" 
+            --textColor="var(--white-shad)"
+        />
+        <!-- <TextButton 
+            text="Download CV" 
+            --mainColor="var(--main-dark)" 
+            --secColor="var(--main-dark-shad)" 
+            --shadColor="var(--main-dark-shad)" 
+            --textColor="var(--white-main)"
+        /> -->
     </div>
     
     <div class="nav nav-socials">
         <IconButton 
             icon="/src/lib/assets/logos/email-white.svg"
             alt="email"
+            href="mailto:leo@yolwoocle.com"
             --mainColor="var(--main-dark)" 
             --secColor="var(--main-dark-shad)" 
             --shadColor="var(--main-dark-shad)" 
@@ -39,6 +53,7 @@
         <IconButton 
             icon="/src/lib/assets/logos/bluesky-white.svg"
             alt="bluesky"
+            href="https://bsky.app/profile/yolwoocle.com/"
             --mainColor="var(--main-dark)" 
             --secColor="var(--main-dark-shad)" 
             --shadColor="var(--main-dark-shad)" 
@@ -46,6 +61,7 @@
         <IconButton 
             icon="/src/lib/assets/logos/twitter-white.svg"
             alt="twitter/x"
+            href="https://x.com/yolwoocle_/"
             --mainColor="var(--main-dark)" 
             --secColor="var(--main-dark-shad)" 
             --shadColor="var(--main-dark-shad)" 
@@ -53,6 +69,7 @@
         <IconButton 
             icon="/src/lib/assets/logos/itchio-white.svg"
             alt="itchio"
+            href="https://yolwoocle.itch.io/"
             --mainColor="var(--main-dark)" 
             --secColor="var(--main-dark-shad)" 
             --shadColor="var(--main-dark-shad)" 
@@ -60,6 +77,7 @@
         <IconButton 
             icon="/src/lib/assets/logos/github-white.svg"
             alt="github"
+            href="https://github.com/yolwoocle"
             --mainColor="var(--main-dark)" 
             --secColor="var(--main-dark-shad)" 
             --shadColor="var(--main-dark-shad)" 
@@ -84,6 +102,9 @@
     .nav {
         display: flex;
         justify-content: center;
+
+        flex-direction: row;
+        gap: 20px;
     }
     
     .nav-main {

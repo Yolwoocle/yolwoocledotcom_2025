@@ -1,14 +1,22 @@
 <script lang="ts">
     export var mainColor, secColor, shadColor;
-	let { icon="", alt="" } = $props();
+	let { icon="", alt="", href="" } = $props();
 </script>
 
 <div class="container">
-    <button class="button shape-round"> 
-        {#if icon}
-        <img class="icon" src={icon} alt="{alt}"/> 
-        {/if}
-    </button>
+    {#if href}
+        <a {href} class="button shape-round"> 
+            {#if icon}
+            <img class="icon" src={icon} alt="{alt}"/> 
+            {/if}
+        </a>
+    {:else}
+        <button class="button shape-round"> 
+            {#if icon}
+            <img class="icon" src={icon} alt="{alt}"/> 
+            {/if}
+        </button>
+    {/if}
 </div>
 
 <style>

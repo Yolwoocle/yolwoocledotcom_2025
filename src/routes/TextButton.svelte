@@ -1,5 +1,5 @@
 <script lang="ts">
-    export var mainColor, secColor, shadColor;
+    export var mainColor, secColor, shadColor, textColor;
 	let { text=""} = $props();
 </script>
 
@@ -51,7 +51,7 @@
     }
     
     .shape-rect {
-        width: 200px;
+        min-width: 200px;
         height: 40px;
     }
     
@@ -93,7 +93,7 @@
         
         font-size: 25px;
 
-        color: var(--shadColor);
+        color: var(--textColor);
         
         top: calc(50% - 2px);
         left: 50%;
