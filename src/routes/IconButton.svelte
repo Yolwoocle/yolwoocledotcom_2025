@@ -1,97 +1,107 @@
 <script lang="ts">
-    export var mainColor, secColor, shadColor;
-	let { icon="", alt="", href="" } = $props();
+	export var mainColor, secColor, shadColor;
+	
+	const defaultFunc = () => {};
+
+	let {
+		icon = '',
+		alt = '',
+		href = '',
+		borderRadius = "100px",
+
+		onclick = defaultFunc
+	} = $props();
+
+	if (href && onclick !== defaultFunc) {
+		onclick = () => {
+			location.href = href;
+		};
+	}
 </script>
 
 <div class="container">
-    {#if href}
-        <a {href} class="button shape-round"> 
-            {#if icon}
-            <img class="icon" src={icon} alt="{alt}"/> 
-            {/if}
-        </a>
-    {:else}
-        <button class="button shape-round"> 
-            {#if icon}
-            <img class="icon" src={icon} alt="{alt}"/> 
-            {/if}
-        </button>
-    {/if}
+	<div class="button-container w-min">
+		<button class="button shape-round" style={`border-radius: ${borderRadius}`} {onclick}>
+			{#if icon}
+				<img class="icon" src={icon} {alt} />
+			{/if}
+		</button>
+	</div>
 </div>
 
 <style>
-    .icon {
-        min-width: 30px;
-        width: 30px;
-        height: 30px;
+    .container {
+        width: min-content;
     }
+
+	.icon {
+		min-width: 30px;
+		width: 30px;
+		height: 30px;
+	}
 
 	.button {
-        border: none;
-        border-radius: 100px;
+		border: none;
 
-        position: relative;
-        display: inline-flex;
-        
-        width: 65px;
-        height: 65px;
+		position: relative;
+		display: inline-flex;
 
-        align-items: center;
-        justify-content: center;
-        
-        padding: 10px;
-        
-        /* background: gold; */
-        color: black;
-        text-decoration: none;
-        font-weight: bold;
-        
-        -webkit-box-shadow:inset 0px 0px 0px 5px var(--secColor);
-        -moz-box-shadow:inset 0px 0px 0px 5px var(--secColor);
-        box-shadow:
-            inset 0px 0px 0px 5px var(--secColor),
-            0px 2px 0px var(--shadColor),
-            0px 4px 0px var(--shadColor),
-            0px 6px 0px var(--shadColor),
-            0px 8px 0px var(--shadColor),
-            0px 10px 0px var(--shadColor),
-            2px 17px 0px var(--transp-shad)
-        ;
+		width: 65px;
+		height: 65px;
 
-        background-color: var(--mainColor);
+		align-items: center;
+		justify-content: center;
 
-        top: 0;
+		padding: 10px;
 
-        transition: 
-        top 0.3s var(--ease-out-back),
-        box-shadow 0.3s var(--ease-out-back);
-    }
+		/* background: gold; */
+		color: black;
+		text-decoration: none;
+		font-weight: bold;
 
-    .container:hover .button {
-        top: -6px;
+		-webkit-box-shadow: inset 0px 0px 0px 5px var(--secColor);
+		-moz-box-shadow: inset 0px 0px 0px 5px var(--secColor);
+		box-shadow:
+			inset 0px 0px 0px 5px var(--secColor),
+			0px 2px 0px var(--shadColor),
+			0px 4px 0px var(--shadColor),
+			0px 6px 0px var(--shadColor),
+			0px 8px 0px var(--shadColor),
+			0px 10px 0px var(--shadColor),
+			2px 17px 0px var(--transp-shad);
 
-        box-shadow:
-            inset 0px 0px 0px 5px var(--secColor),
-            0px 3.2px 0px var(--shadColor),
-            0px 6.4px 0px var(--shadColor),
-            0px 9.6px 0px var(--shadColor),
-            0px 12.8px 0px var(--shadColor),
-            0px 16px 0px var(--shadColor),
-            4px 28px 0px var(--transp-shad)
-        ;
-    }
+		background-color: var(--mainColor);
 
-    .container:active .button {
-        top: 5px;
+		top: 0;
 
-        box-shadow:
-            inset 0px 0px 0px 5px var(--secColor),
-            0px 1px 0px var(--shadColor),
-            0px 2px 0px var(--shadColor),
-            0px 3px 0px var(--shadColor),
-            0px 4px 0px var(--shadColor),
-            0px 5px 0px var(--shadColor),
-            1px 8px 0px var(--transp-shad)
-        ;
-    }
+		transition:
+			top 0.3s var(--ease-out-back),
+			box-shadow 0.3s var(--ease-out-back);
+	}
+
+	.container:hover .button {
+		top: -6px;
+
+		box-shadow:
+			inset 0px 0px 0px 5px var(--secColor),
+			0px 3.2px 0px var(--shadColor),
+			0px 6.4px 0px var(--shadColor),
+			0px 9.6px 0px var(--shadColor),
+			0px 12.8px 0px var(--shadColor),
+			0px 16px 0px var(--shadColor),
+			4px 28px 0px var(--transp-shad);
+	}
+
+	.container:active .button {
+		top: 5px;
+
+		box-shadow:
+			inset 0px 0px 0px 5px var(--secColor),
+			0px 1px 0px var(--shadColor),
+			0px 2px 0px var(--shadColor),
+			0px 3px 0px var(--shadColor),
+			0px 4px 0px var(--shadColor),
+			0px 5px 0px var(--shadColor),
+			1px 8px 0px var(--transp-shad);
+	}
 </style>

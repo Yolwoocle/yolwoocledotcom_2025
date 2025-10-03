@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Title from './Title.svelte';
+	import WavyTitle from './WavyTitle.svelte';
 	import Subtitle from './Subtitle.svelte';
 	import Overtitle from './Overtitle.svelte';
 
@@ -11,7 +12,7 @@
 <div class="page">
     <div class="titles">
         <Overtitle text="Léo Bernard • 曹宇" />
-        <Title text="Yolwoocle"/>
+        <WavyTitle text="Yolwoocle"/>
         <Subtitle text="Game dev & artist from France" />
     </div>
     
@@ -20,7 +21,7 @@
         <BigStarButton href="#" buttonStyle={2} text="Art"/>
     </div>
     
-    <div class="nav nav-other">
+    <div class="nav nav-other pointer-events-none">
         <BigStarButton href="#" buttonStyle={3} text="Other"/>
     </div> 
     

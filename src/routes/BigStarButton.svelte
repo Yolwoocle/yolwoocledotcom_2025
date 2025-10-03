@@ -62,7 +62,7 @@
     }
 </script>
 
-<a {href} class="group star-button button-style-{buttonStyle}">
+<a {href} class="group star-button button-style-{buttonStyle} pointer-events-auto">
 	<svg
 		width="325"
 		height="325"
@@ -136,8 +136,7 @@
 	</svg>
 	<span
 		class={cn(
-            `text-(${styles[buttonStyle].colorText})`,
-            `text-${styles[buttonStyle].textSize}`, 
+            `text-3xl`, 
 
             "absolute top-1/2 left-1/2",
             "-translate-x-1/2 -translate-y-1/2",
@@ -150,6 +149,7 @@
             "group-active:text-shadow-[1px_1px_0_var(--transp-shad)]",
             "group-active:translate-y-[calc(-50%+10px)]",
         )}
+        style={`color: var(${styles[buttonStyle].colorText})`}
 		>{text}</span
 	>
 </a>
