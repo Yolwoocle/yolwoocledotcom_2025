@@ -1,26 +1,28 @@
 <script lang="ts">
-  // TODO
-  // fix weird bug where you can hover and click but it doesn't trigger the click func
-  // clicking outside of the area should exit the menu
-  // accessibility
-  // responsiveness
-  // fix issue with pointer-events-auto/none where you can't click on buttons behind the invisible 
-  //   options when unopened
+	// TODO
+	// fix weird bug where you can hover and click but it doesn't trigger the click func
+	// clicking outside of the area should exit the menu
+	// accessibility
+	// responsiveness
+	// fix issue with pointer-events-auto/none where you can't click on buttons behind the invisible
+	//   options when unopened
 
-// let { text } = $props();
-	export var mainColor = 'var(--main-dark)';
-	export var secColor = 'var(--main-dark-shad)';
-	export var shadColor = 'var(--main-dark-shad)';
-	export var highlightColor = 'var(--main-dark-light)';
-	export var textInactiveColor = 'var(--main-dark-hightlight)';
-	export var textColor = 'var(--white-main)';
+	// let { text } = $props();
+	const mainColor = 'var(--main-dark)';
+	const secColor = 'var(--main-dark-shad)';
+	const shadColor = 'var(--main-dark-shad)';
 
 	import IconButton from '../IconButton.svelte';
 
-	export var selectedIndex = 0;
-  export var xDirection = "left"
+	let selectedIndex = $state(0);
 
-	let options = [
+	let {
+		xDirection = 'end'
+	}: {
+		xDirection?: 'start' | 'end';
+	} = $props();
+
+	const options = [
 		{
 			text: 'Français',
 			id: 'fr'
@@ -43,7 +45,7 @@
 		}
 	];
 
-	let optionsShown = true;
+	let optionsShown = $state(true);
 
 	function onButtonClick() {
 		optionsShown = !optionsShown;
@@ -56,58 +58,60 @@
 </script>
 
 <div class="select flex flex-col items-{xDirection} pointer-events-none">
-  <div class="p-4 pointer-events-auto">
-    <IconButton
-      onclick={onButtonClick}
-      icon="/src/lib/assets/logos/language-white.svg"
-      alt="JSP"
-      borderRadius="15px"
-      --mainColor={mainColor}
-      --secColor={secColor}
-      --shadColor={shadColor}
-    />
-  </div>
+	<div class="p-4 pointer-events-auto">
+		<IconButton
+			onclick={onButtonClick}
+			icon="/src/lib/assets/logos/language-white.svg"
+			alt="JSP"
+			borderRadius="15px"
+			--mainColor={mainColor}
+			--secColor={secColor}
+			--shadColor={shadColor}
+		/>
+	</div>
 
-  <div
-    class="options {optionsShown ? 'anim' : ''} flex flex-col items-center w-fit py-2 m-4 mt-0 rounded-xl z-[100] pointer-events-auto"
-    style={`
+	<div
+		class="options {optionsShown
+			? 'anim'
+			: ''} flex flex-col items-center w-fit py-2 m-4 mt-0 rounded-xl z-[100] pointer-events-auto"
+		style={`
             background-color: ${mainColor}; 
             box-shadow: 
               inset 0px 0px 0px 5px ${secColor},
               0px 4px 0px ${shadColor},
               2px 17px 0px var(--transp-shad);
         `}
-  >
-    {#each options as option, i}
-      {#if i !== 0}
-        <div
-          class="w-4/5 h-[4px] my-0.5 rounded-full m-0 p-0"
-          style={`background-color: ${secColor}`}
-        ></div>
-      {/if}
-      <div
-        class="button-container {selectedIndex === i
-          ? 'selected'
-          : ''} w-full flex flex-col items-center px-2.5 mx-16 my-0.5"
-      >
-        <button
-          class="button w-full rounded-lg py-1.5"
-          onclick={() => {
-            onOptionClick(i, option);
-          }}
-        >
-          <div class="button-content flex flex-row justify-center items-center">
-            {#if selectedIndex === i}
-              <div class="indicator-dot w-2 h-2 rounded-full bg-white absolute left-5"></div>
-            {/if}
-            <span class="option-text text-xl font-[600]">
-              {option.text}
-            </span>
-          </div>
-        </button>
-      </div>
-    {/each}
-  </div>
+	>
+		{#each options as option, i}
+			{#if i !== 0}
+				<div
+					class="w-4/5 h-[4px] my-0.5 rounded-full m-0 p-0"
+					style={`background-color: ${secColor}`}
+				></div>
+			{/if}
+			<div
+				class="button-container {selectedIndex === i
+					? 'selected'
+					: ''} w-full flex flex-col items-center px-2.5 mx-16 my-0.5"
+			>
+				<button
+					class="button w-full rounded-lg py-1.5"
+					onclick={() => {
+						onOptionClick(i, option);
+					}}
+				>
+					<div class="button-content flex flex-row justify-center items-center">
+						{#if selectedIndex === i}
+							<div class="indicator-dot w-2 h-2 rounded-full bg-white absolute left-5"></div>
+						{/if}
+						<span class="option-text text-xl font-[600]">
+							{option.text}
+						</span>
+					</div>
+				</button>
+			</div>
+		{/each}
+	</div>
 </div>
 
 <style>
@@ -130,24 +134,23 @@
 		transition-delay: 0s;
 	}
 
-  .button {
-    transform: translateY(0px); 
+	.button {
+		transform: translateY(0px);
 		transition:
-      background-color 0.1s ease,
+			background-color 0.1s ease,
 			transform 0.2s var(--ease-out-back);
-  }
-  
+	}
+
 	.button:hover {
 		background-color: var(--main-dark-hightlight);
 	}
 
-  .option-text {
-    display: inline-block;
-    color: var(--main-dark-text);
-    
-		transition:
-			color 0.3s ease;
-  }
+	.option-text {
+		display: inline-block;
+		color: var(--main-dark-text);
+
+		transition: color 0.3s ease;
+	}
 
 	.selected .option-text {
 		color: var(--white-main);
@@ -164,8 +167,7 @@
 
 	.indicator-dot {
 		box-shadow: 0px 0px 0px var(--transp-shad);
-		transition:
-			box-shadow 0.3s ease,
+		transition: box-shadow 0.3s ease;
 	}
 
 	.button:hover .button-content {
@@ -182,8 +184,6 @@
 		color: var(--white-main);
 	}
 
-
-  
 	.button:active .button-content {
 		transform: translateY(2px);
 
@@ -196,7 +196,7 @@
 
 	.button:active {
 		background-color: var(--main-dark-text);
-    transform: translateY(2px);
+		transform: translateY(2px);
 	}
 
 	@keyframes dissapear {
