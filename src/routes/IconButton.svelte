@@ -19,15 +19,15 @@
 	}
 </script>
 
-<div class="container">
+<button class="container" {onclick}>
 	<div class="button-container w-min">
-		<button class="button shape-round" style={`border-radius: ${borderRadius}`} {onclick}>
+		<div class="button shape-round" style={`border-radius: ${borderRadius}`}>
 			{#if icon}
 				<img class="icon" src={icon} {alt} />
 			{/if}
-		</button>
+		</div>
 	</div>
-</div>
+</button>
 
 <style>
     .container {
