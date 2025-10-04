@@ -1,5 +1,13 @@
 <script lang="ts">
-	// let { text } = $props();
+  // TODO
+  // fix weird bug where you can hover and click but it doesn't trigger the click func
+  // clicking outside of the area should exit the menu
+  // accessibility
+  // responsiveness
+  // fix issue with pointer-events-auto/none where you can't click on buttons behind the invisible 
+  //   options when unopened
+
+// let { text } = $props();
 	export var mainColor = 'var(--main-dark)';
 	export var secColor = 'var(--main-dark-shad)';
 	export var shadColor = 'var(--main-dark-shad)';
@@ -10,6 +18,7 @@
 	import IconButton from '../IconButton.svelte';
 
 	export var selectedIndex = 0;
+  export var xDirection = "left"
 
 	let options = [
 		{
@@ -46,66 +55,60 @@
 	}
 </script>
 
-<div class="p-4">
-	<IconButton
-		onclick={onButtonClick}
-		icon="/src/lib/assets/logos/language-white.svg"
-		alt="JSP"
-		borderRadius="15px"
-		--mainColor={mainColor}
-		--secColor={secColor}
-		--shadColor={shadColor}
-	/>
-</div>
+<div class="select flex flex-col items-{xDirection} pointer-events-none">
+  <div class="p-4 pointer-events-auto">
+    <IconButton
+      onclick={onButtonClick}
+      icon="/src/lib/assets/logos/language-white.svg"
+      alt="JSP"
+      borderRadius="15px"
+      --mainColor={mainColor}
+      --secColor={secColor}
+      --shadColor={shadColor}
+    />
+  </div>
 
-{#if true}
-	<div
-		class="options {optionsShown ? 'anim' : ''} flex flex-col items-center w-fit py-2 m-4 mt-0 rounded-xl z-[100]"
-		style={`
+  <div
+    class="options {optionsShown ? 'anim' : ''} flex flex-col items-center w-fit py-2 m-4 mt-0 rounded-xl z-[100] pointer-events-auto"
+    style={`
             background-color: ${mainColor}; 
             box-shadow: 
               inset 0px 0px 0px 5px ${secColor},
               0px 4px 0px ${shadColor},
-        			2px 17px 0px var(--transp-shad);
+              2px 17px 0px var(--transp-shad);
         `}
-	>
-		{#each options as option, i}
-			{#if i !== 0}
-				<div
-					class="w-4/5 h-[4px] my-0.5 rounded-full m-0 p-0"
-					style={`background-color: ${secColor}`}
-				></div>
-			{/if}
-			<div
-				class="button-container {selectedIndex === i
-					? 'selected'
-					: ''} w-full flex flex-col items-center px-2.5 mx-16 my-0.5"
-			>
-				<button
-					class="button w-full rounded-lg py-1.5"
-					onclick={() => {
-						onOptionClick(i, option);
-					}}
-				>
-					<div class="button-content flex flex-row justify-center items-center">
-						{#if selectedIndex === i}
-							<div class="indicator-dot w-2 h-2 rounded-full bg-white absolute left-5"></div>
-						{/if}
-						<span class="option-text text-xl font-[600]">
-							{option.text}
-						</span>
-					</div>
-				</button>
-			</div>
-		{/each}
-	</div>
-{/if}
-
-<!-- <select>
+  >
     {#each options as option, i}
-        <option>{option.text}</option>
+      {#if i !== 0}
+        <div
+          class="w-4/5 h-[4px] my-0.5 rounded-full m-0 p-0"
+          style={`background-color: ${secColor}`}
+        ></div>
+      {/if}
+      <div
+        class="button-container {selectedIndex === i
+          ? 'selected'
+          : ''} w-full flex flex-col items-center px-2.5 mx-16 my-0.5"
+      >
+        <button
+          class="button w-full rounded-lg py-1.5"
+          onclick={() => {
+            onOptionClick(i, option);
+          }}
+        >
+          <div class="button-content flex flex-row justify-center items-center">
+            {#if selectedIndex === i}
+              <div class="indicator-dot w-2 h-2 rounded-full bg-white absolute left-5"></div>
+            {/if}
+            <span class="option-text text-xl font-[600]">
+              {option.text}
+            </span>
+          </div>
+        </button>
+      </div>
     {/each}
-</select> -->
+  </div>
+</div>
 
 <style>
 	.options {
@@ -115,7 +118,7 @@
 
 		transition:
 			opacity 0.3s ease,
-			transform 0.3s var(--ease-out-back),
+			transform 0.3s var(--ease-out-back-strong),
 			visibility 0s linear 0.1s;
 	}
 
