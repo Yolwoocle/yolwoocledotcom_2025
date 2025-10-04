@@ -1,56 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Zen+Maru+Gothic:wght@500;700;900&display=swap');
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-    --ease-out-back-strong: cubic-bezier(0.34, 3.56, 0.64, 1);
-    --ease-out-back: cubic-bezier(0.34, 2.56, 0.64, 1);
-    --ease-out-back-soft: cubic-bezier(0.34, 1.56, 0.64, 1);
+	--ease-out-back-strong: cubic-bezier(0.34, 3.56, 0.64, 1);
+	--ease-out-back: cubic-bezier(0.34, 2.56, 0.64, 1);
+	--ease-out-back-soft: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-    --main-dark: #32477D;
-    --main-dark-shad: #2A3264;
-    --main-dark-hightlight: #466598;
-    --main-dark-text: #779BCB;
+	--main-dark: #32477d;
+	--main-dark-shad: #2a3264;
+	--main-dark-hightlight: #466598;
+	--main-dark-text: #779bcb;
 
-    --transp-shad: hsla(0, 0%, 0%, 0.224);
+	--transp-shad: hsla(0, 0%, 0%, 0.224);
 
-    --green-main: #adcd81;
-    --green-sec: #9cc079;
+	--green-main: #adcd81;
+	--green-sec: #9cc079;
 
-    --yellow-main: #EFE090;
-    --yellow-sec: #EDC177;
-    --yellow-shad: #c78d5a;
-    --yellow-text: #BB7446;
-    --yellow-text-shad: #a64d3c;
+	--yellow-main: #efe090;
+	--yellow-sec: #edc177;
+	--yellow-shad: #c78d5a;
+	--yellow-text: #bb7446;
+	--yellow-text-shad: #a64d3c;
 
-    --blue-main: #97D1C1;
-    --blue-sec: #67ABB4;
-    --blue-shad: #52819f;
-    --blue-text: #426F92;
+	--blue-main: #97d1c1;
+	--blue-sec: #67abb4;
+	--blue-shad: #52819f;
+	--blue-text: #426f92;
 
-    --pink-main: #EAA6A7;
-    --pink-sec: #D57487;
-    --pink-shad: #B85171;
-    --pink-text: #B85171;
+	--pink-main: #eaa6a7;
+	--pink-sec: #d57487;
+	--pink-shad: #b85171;
+	--pink-text: #b85171;
 
-    --white-main: #ffffff;
-    --white-sec: #C4D0D7;
-    --white-shad: #99A0B2;
-    --white-text: #99A0B2;
+	--white-main: #ffffff;
+	--white-sec: #c4d0d7;
+	--white-shad: #99a0b2;
+	--white-text: #99a0b2;
 }
 
-h1, h2, h3, h4, h5, h6, p, button, a {
-    font-family: "Fredoka", "Zen Maru Gothic", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+a {
+	font-family: 'Fredoka', 'Zen Maru Gothic', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+	font-variation-settings: 'wdth' 100;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700;
 }
 
 body {
-    margin: 0;
+	margin: 0;
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-    var { children } = $props()
+	var { children } = $props();
 </script>
 
 <p>LAYOUT</p>
