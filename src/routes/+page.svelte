@@ -1,18 +1,27 @@
 <script lang="ts">
-	import Title from './Title.svelte';
-	import WavyTitle from './WavyTitle.svelte';
-	import Subtitle from './Subtitle.svelte';
 	import Overtitle from './Overtitle.svelte';
+	import Subtitle from './Subtitle.svelte';
+	import WavyTitle from './WavyTitle.svelte';
 
 	import BigStarButton from './BigStarButton.svelte';
-	import TextButton from './TextButton.svelte';
 	import IconButton from './IconButton.svelte';
-	import Select from './test/Select.svelte';
+	import Select2 from './test/Select.svelte';
+	import Select from './test/SelectBitsUI.svelte';
+	import TextButton from './TextButton.svelte';
 </script>
 
 <div class="page">
-	<div class="absolute right-0 p-3 z-10">
-		<Select xDirection="end" />
+	<div class="absolute flex flex-col items-end right-0 p-3 z-10">
+		<Select
+			options={[
+				{ label: 'Français', value: 'fr' },
+				{ label: 'English', value: 'en' },
+				{ label: '中文', value: 'zh' },
+				{ label: '日本語', value: 'jp' },
+				{ label: 'Español', value: 'es' }
+			]}
+		/>
+		<!-- <Select2 /> -->
 	</div>
 	<main>
 		<div class="titles">

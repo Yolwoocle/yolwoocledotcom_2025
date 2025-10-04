@@ -38,15 +38,7 @@
 	--white-text: #99a0b2;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-button,
-a {
+* {
 	font-family: 'Fredoka', 'Zen Maru Gothic', sans-serif;
 	font-optical-sizing: auto;
 	font-weight: 600;
@@ -65,4 +57,37 @@ h6 {
 
 body {
 	margin: 0;
+}
+
+@theme inline {
+	--color-dark: var(--main-dark);
+	--color-dark-shadow: var(--main-dark-shad);
+	--color-dark-hightlight: var(--main-dark-hightlight);
+	--color-dark-foreground: var(--main-dark-text);
+
+	--color-transp-shadow: var(--transp-shad);
+
+	--color-green: var(--green-main);
+	--color-green-secondary: var(--green-sec);
+
+	--color-yellow: var(--yellow-main);
+	--color-yellow-secondary: var(--yellow-sec);
+	--color-yellow-shadow: var(--yellow-shad);
+	--color-yellow-foreground: var(--yellow-text);
+	--color-yellow-foreground-shadow: var(--yellow-text-shad);
+
+	--color-blue: var(--blue-main);
+	--color-blue-secondary: var(--blue-sec);
+	--color-blue-shadow: var(--blue-shad);
+	--color-blue-foreground: var(--blue-text);
+
+	--color-pink: var(--pink-main);
+	--color-pink-secondary: var(--pink-sec);
+	--color-pink-shadow: var(--pink-shad);
+	--color-pink-foreground: var(--pink-text);
+
+	--color-white: var(--white-main);
+	--color-white-secondary: var(--white-sec);
+	--color-white-shadow: var(--white-shad);
+	--color-white-foreground: var(--white-text);
 }

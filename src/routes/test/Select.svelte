@@ -8,19 +8,21 @@
 	//   options when unopened
 
 	// let { text } = $props();
-	export var mainColor = 'var(--main-dark)';
-	export var secColor = 'var(--main-dark-shad)';
-	export var shadColor = 'var(--main-dark-shad)';
-	export var highlightColor = 'var(--main-dark-light)';
-	export var textInactiveColor = 'var(--main-dark-hightlight)';
-	export var textColor = 'var(--white-main)';
+	const mainColor = 'var(--main-dark)';
+	const secColor = 'var(--main-dark-shad)';
+	const shadColor = 'var(--main-dark-shad)';
 
 	import IconButton from '../IconButton.svelte';
 
-	export var selectedIndex = 0;
-	export var xDirection = 'left';
+	let selectedIndex = $state(0);
 
-	let options = [
+	let {
+		xDirection = 'end'
+	}: {
+		xDirection?: 'start' | 'end';
+	} = $props();
+
+	const options = [
 		{
 			text: 'Français',
 			id: 'fr'
@@ -43,7 +45,7 @@
 		}
 	];
 
-	let optionsShown = true;
+	let optionsShown = $state(true);
 
 	function onButtonClick() {
 		optionsShown = !optionsShown;
