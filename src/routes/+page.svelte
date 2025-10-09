@@ -5,125 +5,92 @@
 
 	import BigStarButton from './BigStarButton.svelte';
 	import IconButton from './IconButton.svelte';
-	import Select2 from './test/Select.svelte';
-	import Select from './test/SelectBitsUI.svelte';
 	import TextButton from './TextButton.svelte';
+	import LanguageSelect from './LanguageSelect.svelte';
 </script>
 
-<div class="page">
-	<div class="absolute flex flex-col items-end right-0 p-3 z-10">
-		<Select
-			options={[
-				{ label: 'Français', value: 'fr' },
-				{ label: 'English', value: 'en' },
-				{ label: '中文', value: 'zh' },
-				{ label: '日本語', value: 'jp' },
-				{ label: 'Español', value: 'es' }
-			]}
-		/>
-		<!-- <Select2 /> -->
-	</div>
-	<main>
-		<div class="titles">
-			<Overtitle text="Léo Bernard • 曹宇" />
-			<WavyTitle text="Yolwoocle" />
-			<Subtitle text="Game dev & artist from France" />
-		</div>
-
-		<div class="nav nav-main">
-			<BigStarButton href="#" buttonStyle={1} text="Games" />
-			<BigStarButton href="#" buttonStyle={2} text="Art" />
-		</div>
-
-		<div class="nav nav-other pointer-events-none">
-			<BigStarButton href="#" buttonStyle={3} text="Other" />
-		</div>
-
-		<div class="nav">
-			<TextButton
-				text="About"
-				--mainColor="var(--white-main)"
-				--secColor="var(--white-sec)"
-				--shadColor="var(--white-shad)"
-				--textColor="var(--white-shad)"
-			/>
-			<!-- <TextButton 
-                text="Download CV" 
-                --mainColor="var(--main-dark)" 
-                --secColor="var(--main-dark-shad)" 
-                --shadColor="var(--main-dark-shad)" 
-                --textColor="var(--white-main)"
-            /> -->
-		</div>
-
-		<div class="nav nav-socials">
-			<IconButton
-				icon="/src/lib/assets/logos/email-white.svg"
-				alt="email"
-				href="mailto:leo@yolwoocle.com"
-				--mainColor="var(--main-dark)"
-				--secColor="var(--main-dark-shad)"
-				--shadColor="var(--main-dark-shad)"
-			/>
-			<IconButton
-				icon="/src/lib/assets/logos/bluesky-white.svg"
-				alt="bluesky"
-				href="https://bsky.app/profile/yolwoocle.com/"
-				--mainColor="var(--main-dark)"
-				--secColor="var(--main-dark-shad)"
-				--shadColor="var(--main-dark-shad)"
-			/>
-			<IconButton
-				icon="/src/lib/assets/logos/twitter-white.svg"
-				alt="twitter/x"
-				href="https://x.com/yolwoocle_/"
-				--mainColor="var(--main-dark)"
-				--secColor="var(--main-dark-shad)"
-				--shadColor="var(--main-dark-shad)"
-			/>
-			<IconButton
-				icon="/src/lib/assets/logos/itchio-white.svg"
-				alt="itchio"
-				href="https://yolwoocle.itch.io/"
-				--mainColor="var(--main-dark)"
-				--secColor="var(--main-dark-shad)"
-				--shadColor="var(--main-dark-shad)"
-			/>
-			<IconButton
-				icon="/src/lib/assets/logos/github-white.svg"
-				alt="github"
-				href="https://github.com/yolwoocle"
-				--mainColor="var(--main-dark)"
-				--secColor="var(--main-dark-shad)"
-				--shadColor="var(--main-dark-shad)"
-			/>
-		</div>
-	</main>
+<div class="absolute flex flex-col items-end right-0 m-7 p-3 z-10">
+	<LanguageSelect />	
+	<!-- <Select2 /> -->
 </div>
+<main>
+	<div class="titles">
+		<Overtitle text="Léo Bernard • 曹宇" />
+		<WavyTitle text="Yolwoocle" />
+		<Subtitle text="Game dev & artist from France" />
+	</div>
+
+	<div class="nav nav-main">
+		<BigStarButton href="projects" buttonStyle={1} text="Projects" />
+		<BigStarButton href="art" buttonStyle={2} text="Art" />
+	</div>
+
+	<div class="nav nav-other pointer-events-none">
+		<BigStarButton href="#" buttonStyle={3} text="Other" />
+	</div>
+
+	<div class="nav">
+		<TextButton
+			text="About"
+			--mainColor="var(--white-main)"
+			--secColor="var(--white-sec)"
+			--shadColor="var(--white-shad)"
+			--textColor="var(--white-shad)"
+		/>
+		<!-- <TextButton 
+			text="Download CV" 
+			--mainColor="var(--main-dark)" 
+			--secColor="var(--main-dark-shad)" 
+			--shadColor="var(--main-dark-shad)" 
+			--textColor="var(--white-main)"
+		/> -->
+	</div>
+
+	<div class="nav nav-socials">
+		<IconButton
+			icon="/src/lib/assets/logos/email-white.svg"
+			alt="email"
+			href="mailto:leo@yolwoocle.com"
+			--mainColor="var(--main-dark)"
+			--secColor="var(--main-dark-shad)"
+			--shadColor="var(--main-dark-shad)"
+		/>
+		<IconButton
+			icon="/src/lib/assets/logos/bluesky-white.svg"
+			alt="bluesky"
+			href="https://bsky.app/profile/yolwoocle.com/"
+			--mainColor="var(--main-dark)"
+			--secColor="var(--main-dark-shad)"
+			--shadColor="var(--main-dark-shad)"
+		/>
+		<IconButton
+			icon="/src/lib/assets/logos/twitter-white.svg"
+			alt="twitter/x"
+			href="https://x.com/yolwoocle_/"
+			--mainColor="var(--main-dark)"
+			--secColor="var(--main-dark-shad)"
+			--shadColor="var(--main-dark-shad)"
+		/>
+		<IconButton
+			icon="/src/lib/assets/logos/itchio-white.svg"
+			alt="itchio"
+			href="https://yolwoocle.itch.io/"
+			--mainColor="var(--main-dark)"
+			--secColor="var(--main-dark-shad)"
+			--shadColor="var(--main-dark-shad)"
+		/>
+		<IconButton
+			icon="/src/lib/assets/logos/github-white.svg"
+			alt="github"
+			href="https://github.com/yolwoocle"
+			--mainColor="var(--main-dark)"
+			--secColor="var(--main-dark-shad)"
+			--shadColor="var(--main-dark-shad)"
+		/>
+	</div>
+</main>
 
 <style>
-	.page {
-		margin: 0;
-
-		width: 100%;
-		height: 100vh;
-
-		background-position: 0px;
-		background-image: linear-gradient(
-			135deg,
-			var(--green-main) 25%,
-			var(--green-sec) 25%,
-			var(--green-sec) 50%,
-			var(--green-main) 50%,
-			var(--green-main) 75%,
-			var(--green-sec) 75%,
-			var(--green-sec) 100%
-		);
-		background-size: 110px 110px;
-
-		animation: constantMovement 7s linear infinite;
-	}
-
 	main {
 		display: flex;
 		flex-direction: column;
@@ -164,14 +131,5 @@
 	.nav-socials {
 		margin-top: 20px;
 		gap: 10px;
-	}
-
-	@keyframes constantMovement {
-		0% {
-			background-position: 0px 0px;
-		}
-		100% {
-			background-position: 0px 110px;
-		}
 	}
 </style>

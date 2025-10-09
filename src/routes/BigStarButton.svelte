@@ -146,7 +146,7 @@
 	</svg>
 	<span
 		class={cn(
-			`text-3xl`,
+			`text-3xl font-black`,
 
 			'absolute top-1/2 left-1/2',
 			'-translate-x-1/2 -translate-y-1/2',

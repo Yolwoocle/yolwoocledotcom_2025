@@ -13,8 +13,12 @@
 
 	--transp-shad: hsla(0, 0%, 0%, 0.224);
 
+	/* --green-main: #A2C18A;
+	--green-sec: #90B382; */
 	--green-main: #adcd81;
 	--green-sec: #9cc079;
+	--green-shad: #72A776;
+	--green-text: #487D72;
 
 	--yellow-main: #efe090;
 	--yellow-sec: #edc177;
