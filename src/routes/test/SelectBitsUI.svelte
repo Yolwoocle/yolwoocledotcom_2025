@@ -1,4 +1,6 @@
 <script lang="ts">
+	// Thank you to Matteo for his help on this whole component
+
 	import { fly } from 'svelte/transition';
 	import { cn } from '$lib/utils';
 	import { Select } from 'bits-ui';
@@ -15,6 +17,17 @@
 
 	let anchorRef = $state<HTMLDivElement>();
 	let value = $state<string>('');
+
+	function easeOutBack(t: number) {
+		const c1 = 1.70158; // standard back constant
+		const c3 = c1 + 1;
+
+		// The CSS curve’s “overshoot” is stronger, so we’ll adjust the back amount
+		const customC1 = 3.56; // tuned to roughly match the CSS Bezier’s peak
+
+		const c3_custom = customC1 + 1;
+		return 1 + c3_custom * Math.pow(t - 1, 3) + customC1 * Math.pow(t - 1, 2);
+	}
 </script>
 
 <Select.Root type="single" bind:value items={options} allowDeselect={true}>
@@ -42,8 +55,8 @@
 		>
 			{#snippet child({ wrapperProps, props, open })}
 				{#if open}
-					<div {...wrapperProps}>
-						<div {...props} transition:fly={{ y: 10 }}>
+					<div {...wrapperProps} transition:fly={{ y: 10, easing: easeOutBack }}>
+						<div {...props}>
 							<Select.Viewport class="flex min-w-[200px] flex-col items-center p-1 gap-1">
 								{#each options as option, i (i + option.value)}
 									{#if i !== 0}
@@ -68,6 +81,7 @@
 										{#snippet children({ selected })}
 											{#if selected}
 												<div
+													style="transition: translate 300ms var(--ease-out-back), text-shadow 200ms ease"
 													class={cn(
 														'indicator-dot w-2 h-2 rounded-full bg-white absolute right-5 shadow-[0px_0px_0px_var(--transp-shad)]',
 														'translate-y-0 transition-all duration-300',
@@ -77,10 +91,10 @@
 												></div>
 											{/if}
 											<span
-												style="transition: color 300ms, translate 300ms var(--ease-out-back)"
+												style="transition: color 300ms, translate 300ms var(--ease-out-back), text-shadow 200ms ease"
 												class={cn(
 													'item-text inline-block text-dark-foreground',
-													'[text-shadow:0px_0px_0px_var(--transp-shad)]',
+													'ease-(--ease-out-back) duration-300',
 													'group-hover:text-white group-hover:-translate-y-1 group-hover:[text-shadow:1px_5px_0px_var(--transp-shad)]',
 													'group-data-[highlighted]:text-white group-data-[selected]:text-white',
 													'group-active:translate-y-0.5 group-active:[text-shadow:0px_0px_0px_var(--transp-shad)]'
@@ -101,7 +115,6 @@
 </Select.Root>
 
 <style>
-	/* Trigger Button - matching IconButton style */
 	:global(.select-trigger-button) {
 		top: 0;
 		box-shadow:
@@ -142,8 +155,7 @@
 			1px 8px 0px var(--transp-shad);
 	}
 
-	/* Dropdown Content */
-	:global(.select-select-dropdown-content) {
+	:global(.select-dropdown-content) {
 		max-height: var(--bits-select-content-available-height);
 		width: min-content;
 		min-width: var(--bits-select-anchor-width);
@@ -152,20 +164,5 @@
 			inset 0px 0px 0px 5px var(--main-dark-shad),
 			0px 4px 0px var(--main-dark-shad),
 			2px 17px 0px var(--transp-shad);
-
-		animation: slideIn 0.3s var(--ease-out-back-strong);
-	}
-
-	@keyframes slideIn {
-		from {
-			opacity: 0;
-			transform: translateY(10px);
-			visibility: hidden;
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-			visibility: visible;
-		}
 	}
 </style>
