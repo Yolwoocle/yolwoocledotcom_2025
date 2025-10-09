@@ -1,13 +1,13 @@
 <script lang="ts">
 	export var mainColor, secColor, shadColor;
-	
+
 	const defaultFunc = () => {};
 
 	let {
 		icon = '',
 		alt = '',
 		href = '',
-		borderRadius = "100px",
+		borderRadius = '100px',
 
 		onclick = defaultFunc
 	} = $props();
@@ -30,9 +30,9 @@
 </button>
 
 <style>
-    .container {
-        width: min-content;
-    }
+	.container {
+		width: min-content;
+	}
 
 	.icon {
 		min-width: 30px;
