@@ -53,10 +53,13 @@
 	];
 </script>
 
-<nav>
-	<div class={cn('flex flex-row gap-4', 'items-center justify-center', 'w-full', 'px-10')}>
+<nav class={cn('flex', 'w-full', 'justify-center')}>
+	<div class={cn('flex flex-row gap-4', 'items-center justify-center', 'w-full max-w-[1200px]', 'px-10')}>
 		{#each pages as page, i}
-			<a class={cn('navbar-link group relative', 'flex-1', 'h-fit', '-translate-y-8')} href={page.url}>
+			<a
+				class={cn('navbar-link group relative', 'flex-1', 'h-fit', '-translate-y-8')}
+				href={page.url}
+			>
 				<div
 					style={`
 					background-color: ${page.backgroundColor};
@@ -76,13 +79,13 @@
 						'relative',
 						'p-6 pt-12',
 						'shrink-0',
-						'text-3xl text-center', 
-						'rounded-b-3xl', 
+						'text-2xl text-center',
+						'rounded-b-3xl',
 						'translate-y-0',
-						
+
 						'transition-transform',
 						'ease-(--ease-out-back) duration-300',
-						'group-hover:translate-y-3',
+						'group-hover:translate-y-3'
 					)}
 				>
 					<span class="hidden sm:inline"> {page.title} </span>
