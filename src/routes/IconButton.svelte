@@ -19,7 +19,7 @@
 	}
 </script>
 
-<button class="container" {onclick}>
+{#snippet buttonContent()}
 	<div class="button-container w-min">
 		<div class="button shape-round" style={`border-radius: ${borderRadius}`}>
 			{#if icon}
@@ -27,7 +27,17 @@
 			{/if}
 		</div>
 	</div>
-</button>
+{/snippet}
+
+{#if href}
+	<a class="container" href={href}>
+		{@render buttonContent()}
+	</a>
+{:else}
+	<button class="container" {onclick}>
+		{@render buttonContent()}
+	</button>
+{/if}
 
 <style>
 	.container {

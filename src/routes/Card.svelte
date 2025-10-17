@@ -1,63 +1,40 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
 
-	let { title = '', img = '', imgAlt = '' } = $props();
+	let { title = '', img = '', imgAlt = '', onclick=(() => {}) } = $props();
 
 	let ref: HTMLElement;
 
-	let cardRotationX = $state(0);
-	let cardRotationY = $state(0);
-	let initialCardRotationZ = 0;// (Math.random() - 0.5) * 0.1;
-	let cardRotationZ = $state(initialCardRotationZ);
-	let cardTranslationY = $state(0);
-
-	function onMouseMove(e: MouseEvent) {
-		if (!ref) {
-			return;
-		}
-
-		let rect = ref.getBoundingClientRect();
-		let x = ((e.clientX - rect.x) / rect.width) * 2 - 1;
-		let y = ((e.clientY - rect.y) / rect.height) * 2 - 1;
-
-		console.log(x, y);
-
-		cardRotationY = x * 0.2;
-		cardRotationX = -y * 0.2;
-		cardRotationZ = 0.0;
-
-		cardTranslationY = -10;
-	}
-
-	function onMouseLeave() {
-		cardRotationY = 0.0;
-		cardRotationX = 0.0;
-		cardRotationZ = initialCardRotationZ;
-
-		cardTranslationY = 0;
-	}
+	let initialCardRotation = (Math.random() - 0.5) * 0.1;
+	let cardRotation = $state(initialCardRotation);
 </script>
 
 <button
-	class={cn('size-60 group', 'pointer-event-none')}
-	onmousemove={onMouseMove}
-	onmouseleave={onMouseLeave}
+	class={cn('size-60 group')}
+	{onclick}
 >
 	<div
 		bind:this={ref}
-		style={`transform: perspective(800px) rotateX(${cardRotationX}rad) rotateY(${cardRotationY}rad) rotateZ(${cardRotationZ}rad) translateY(${cardTranslationY}px);`}
+		style={`--rotation-value: ${cardRotation}rad`}
 		class={cn(
 			'relative size-full flex flex-col',
-			'pointer-event-none',
+			'pointer-events-none',
 			'bg-white rounded-2xl p-3',
-			'transition-transform',
-			'ease-(--ease-out-back) duration-300'
+			'transition-[all,box-shadow_200ms_ease]',
+			'ease-(--ease-out-back) duration-300',
+
+			'rotate-[var(--rotation-value)]',
+			'shadow-[2px_8px_0px_var(--transp-shad)]',
+
+			'group-hover:-translate-y-2',
+			'group-hover:rotate-0',
+			'group-hover:shadow-[3px_16px_0px_var(--transp-shad)]',
 		)}
 	>
 		{#if img}
 			<img src={img} alt={imgAlt} class="size-full object-cover rounded-xl" />
 		{/if}
-		<span>
+		<span class="mt-2">
 			{title}
 		</span>
 	</div>
