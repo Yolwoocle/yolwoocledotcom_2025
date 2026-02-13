@@ -8,23 +8,27 @@
   let { cards = [] } = $props();
 
   let modalShown = $state(false);
+  let currentCardIndex = $state(0);
 </script>
 
 <div class="flex w-full justify-center p-6">
   <div class={cn('flex flex-wrap gap-6 justify-center', 'max-w-[1000px]')}>
-    {#each cards as card}
+    {#each cards as card, i}
       <Card
         title={card.label}
         img={card.img}
         imgAlt={card.imgAlt}
         onclick={() => {
           modalShown = true;
+          currentCardIndex = i;
         }}
       />
     {/each}
   </div>
 </div>
 
-<Modal bind:modalShown>
-  <CardCarousel cards={cards} />
-</Modal>
+<div>
+  <Modal bind:modalShown>
+    <CardCarousel cards={cards} bind:currentCardIndex />
+  </Modal>
+</div>

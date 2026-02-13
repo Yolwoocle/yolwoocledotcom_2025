@@ -1,5 +1,8 @@
 <script lang="ts">
-	export var mainColor, secColor, shadColor;
+	export var mainColor: String;
+	export var secColor: String;
+	export var shadColor: String;
+	export var textColor: String;
 
 	const defaultFunc = () => {};
 
@@ -48,6 +51,9 @@
 		min-width: 30px;
 		width: 30px;
 		height: 30px;
+
+		/* color: var(--textColor); */
+		color: red;
 	}
 
 	.button {

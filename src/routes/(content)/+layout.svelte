@@ -2,4 +2,6 @@
 	var { children } = $props();
 </script>
 
-{@render children?.()}
+<div class="size-full pt-24">
+	{@render children?.()}
+</div>

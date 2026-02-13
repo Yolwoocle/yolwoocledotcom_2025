@@ -76,7 +76,7 @@
   ];
 </script>
 
-<nav class={cn('flex', 'w-full', 'justify-center')}>
+<nav class={cn('flex', 'w-full', 'justify-center', 'fixed z-10')}>
   <div
     class={cn(
       'items-container',

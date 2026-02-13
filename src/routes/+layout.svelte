@@ -15,7 +15,7 @@
 </svelte:head>
 
 
-<div class="page flex flex-col">
+<div class="page">
 	<Navbar />
 	{@render children?.()}
 </div>

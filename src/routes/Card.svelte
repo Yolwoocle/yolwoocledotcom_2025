@@ -15,7 +15,6 @@
 >
 	<div
 		bind:this={ref}
-		style={`--rotation-value: ${cardRotation}rad`}
 		class={cn(
 			'relative size-full flex flex-col',
 			'pointer-events-none',
@@ -27,7 +26,7 @@
 			'shadow-[2px_8px_0px_var(--transp-shad)]',
 
 			'group-hover:-translate-y-2',
-			'group-hover:rotate-0',
+			'group-hover:-rotate-2',
 			'group-hover:shadow-[3px_16px_0px_var(--transp-shad)]',
 		)}
 	>

@@ -9,7 +9,7 @@
 	import LanguageSelect from './LanguageSelect.svelte';
 </script>
 
-<main class="flex flex-col gap-6 grow py-10 overflow-hidden">
+<main class="flex flex-col gap-6 grow py-10 overflow-hidden min-h-screen">
 	<div class="titles flex flex-col -gap-1">
 		<img src="/src/lib/assets/images/yolwoocle_title.png" alt="Yolwoocle" class="select-none" style="width: 100%; max-width:600px">
 		<p style="font-size: 40px; font-weight: 800; margin-top: -6px; margin-bottom: 14px; text-shadow: 1px 4px 0 var(--transp-shad); color: var(--main-very-dark)">
@@ -29,7 +29,7 @@
 		<BigStarButton href="#" buttonStyle={3} text="Other" />
 	</div> -->
 
-	<div class="nav nav-socials pb-22">
+	<div class="nav nav-socials">
 		<IconButton
 			icon="/src/lib/assets/logos/email-white.svg"
 			alt="email"

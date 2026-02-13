@@ -4,21 +4,25 @@
 	let projects = [
 		{
 			label: 'Tarte au citron meringuée',
+			description: '',
             img: '/src/lib/assets/images/art/tarteaucitronmeringuee.png',
 			value: '1'
 		},
 		{
 			label: 'Miniature Kaiju',
+			description: '',
             img: '/src/lib/assets/images/art/sunnyside_cruise.png',
 			value: '2'
 		},
 		{
 			label: 'Sunnyside Cruise',
+			description: '',
             img: '/src/lib/assets/images/art/miniature_kaiju.png',
 			value: '3'
 		},
 		{
 			label: 'Doodle Art',
+			description: '',
             img: '/src/lib/assets/images/art/sunnyside_cruise.png',
 			value: '4'
 		},

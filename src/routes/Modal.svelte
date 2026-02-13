@@ -10,20 +10,24 @@
 	function closeModal() {
 		modalShown = false;
 	}
+
+	function handleBackdropClick(e: MouseEvent) {
+        // If the click target is exactly the backdrop (and not a child)
+        if (e.target === e.currentTarget) {
+            closeModal();
+        }
+    }
 </script>
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 {#if modalShown}
-	<button 
-		bind:this={dialog}
-		onclose={() => {modalShown = false;}}
-		onclick={(e) => {if (e.target === dialog) closeModal();}}
-		class="absolute size-full top-0 left-0 flex justify-center items-center bg-(--transp-shad)"
+	<div 
+		onclick={handleBackdropClick}
+		class="z-100 absolute size-full top-0 left-0 flex justify-center items-center bg-[#0004]"
+		style="backdrop-filter: blur(4px)"
 	>
-		<div class="size-full">
-			{@render children?.()}
-		</div>
-	</button>
+		{@render children?.()}
+	</div>
 {/if}
 
 <style>
