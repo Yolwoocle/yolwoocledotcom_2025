@@ -9,44 +9,27 @@
 	import LanguageSelect from './LanguageSelect.svelte';
 </script>
 
-<div class="absolute flex flex-col items-end right-0 m-7 p-3 z-10">
-	<LanguageSelect />	
-	<!-- <Select2 /> -->
-</div>
-<main>
-	<div class="titles">
-		<Overtitle text="Léo Bernard • 曹宇" />
-		<WavyTitle text="Yolwoocle" />
-		<Subtitle text="Game dev & artist from France" />
+<main class="flex flex-col gap-6 grow py-10 overflow-hidden">
+	<div class="titles flex flex-col -gap-1">
+		<img src="/src/lib/assets/images/yolwoocle_title.png" alt="Yolwoocle" class="select-none" style="width: 100%; max-width:600px">
+		<p style="font-size: 40px; font-weight: 800; margin-top: -6px; margin-bottom: 14px; text-shadow: 1px 4px 0 var(--transp-shad); color: var(--main-very-dark)">
+			Léo Bernard • 曹宇
+		</p>
+		<p style="font-size: 30px; font-weight: 600; text-shadow: 1px 4px 0 var(--transp-shad); color: var(--main-dark)">
+			French game developer and artist
+		</p>
 	</div>
 
-	<div class="nav nav-main">
+	<!-- <div class="nav nav-main">
 		<BigStarButton href="projects" buttonStyle={1} text="Projects" />
 		<BigStarButton href="art" buttonStyle={2} text="Art" />
 	</div>
 
 	<div class="nav nav-other pointer-events-none">
 		<BigStarButton href="#" buttonStyle={3} text="Other" />
-	</div>
+	</div> -->
 
-	<div class="nav">
-		<TextButton
-			text="About"
-			--mainColor="var(--white-main)"
-			--secColor="var(--white-sec)"
-			--shadColor="var(--white-shad)"
-			--textColor="var(--white-shad)"
-		/>
-		<!-- <TextButton 
-			text="Download CV" 
-			--mainColor="var(--main-dark)" 
-			--secColor="var(--main-dark-shad)" 
-			--shadColor="var(--main-dark-shad)" 
-			--textColor="var(--white-main)"
-		/> -->
-	</div>
-
-	<div class="nav nav-socials">
+	<div class="nav nav-socials pb-22">
 		<IconButton
 			icon="/src/lib/assets/logos/email-white.svg"
 			alt="email"

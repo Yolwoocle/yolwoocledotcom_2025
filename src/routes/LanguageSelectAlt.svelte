@@ -1,8 +1,8 @@
 <script>
-	import Select from './Select.svelte';
+	import SelectNavbar from './SelectNavbar.svelte';
 </script>
 
-<Select
+<SelectNavbar
     options={[
         { label: 'Français', value: 'fr' },
         { label: 'English', value: 'en' },

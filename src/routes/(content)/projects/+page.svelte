@@ -3,23 +3,23 @@
 
 	let projects = [
 		{
-			label: 'Lisa & Olive',
-            img: '/src/lib/assets/images/art/lisa_and_olive_square.png',
+			label: 'Tarte au citron meringuée',
+            img: '/src/lib/assets/images/art/tarteaucitronmeringuee.png',
 			value: '1'
 		},
 		{
 			label: 'Miniature Kaiju',
-            img: '/src/lib/assets/images/art/miniature_kaiju.png',
+            img: '/src/lib/assets/images/art/sunnyside_cruise.png',
 			value: '2'
 		},
 		{
 			label: 'Sunnyside Cruise',
-            img: '/src/lib/assets/images/art/sunnyside_cruise.png',
+            img: '/src/lib/assets/images/art/miniature_kaiju.png',
 			value: '3'
 		},
 		{
 			label: 'Doodle Art',
-            img: '/src/lib/assets/images/art/doodle_art_vertical.png',
+            img: '/src/lib/assets/images/art/sunnyside_cruise.png',
 			value: '4'
 		},
 		// {

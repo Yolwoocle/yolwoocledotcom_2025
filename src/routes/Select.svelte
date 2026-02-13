@@ -1,7 +1,6 @@
 <script lang="ts">
 	// TODO
 	// fix weird bug where you can hover and click but it doesn't trigger the click func
-	// clicking outside of the area should exit the menu
 	// accessibility
 	// responsiveness
 	// fix issue with pointer-events-auto/none where you can't click on buttons behind the invisible
@@ -12,40 +11,30 @@
 	const secColor = 'var(--main-dark-shad)';
 	const shadColor = 'var(--main-dark-shad)';
 
-	import IconButton from '../IconButton.svelte';
+	import IconButton from './IconButton.svelte';
+	import TextButton from './TextButton.svelte';
 
 	let selectedIndex = $state(0);
 
+	// let {
+	//   xDirection = 'end'
+	// }: {
+	//   xDirection?: 'start' | 'end';
+	// } = $props();
+
 	let {
+		options,
 		xDirection = 'end'
 	}: {
 		xDirection?: 'start' | 'end';
+		options?: {
+			value: string;
+			label: string;
+			disabled?: boolean;
+		}[];
 	} = $props();
 
-	const options = [
-		{
-			text: 'Français',
-			id: 'fr'
-		},
-		{
-			text: 'English',
-			id: 'en'
-		},
-		{
-			text: '中文',
-			id: 'zh'
-		},
-		{
-			text: '日本語',
-			id: ''
-		},
-		{
-			text: 'Español',
-			id: ''
-		}
-	];
-
-	let optionsShown = $state(true);
+	let optionsShown = $state(false);
 
 	function onButtonClick() {
 		optionsShown = !optionsShown;
@@ -54,10 +43,37 @@
 	function onOptionClick(index: number, option: any) {
 		selectedIndex = index;
 		console.log(option);
+
+		// close();
 	}
+
+	function close() {
+		optionsShown = false;
+	}
+
+	function clickOutside(node: HTMLElement, callback: () => void) {
+		let handle = (event: MouseEvent) => {
+			if (!node.contains(event.target as Node)) {
+				callback();
+			}
+		};
+
+		document.addEventListener('click', handle, true);
+
+		return {
+			destroy() {
+				document.removeEventListener('click', handle, true);
+			}
+		};
+	}
+
+	// todo do close behavior when clicking outside the select (cf chatgpt)
 </script>
 
-<div class="select flex flex-col items-{xDirection} pointer-events-none">
+<div
+	class="select relative flex flex-col items-{xDirection} pointer-events-none"
+	use:clickOutside={close}
+>
 	<div class="p-4 pointer-events-auto">
 		<IconButton
 			onclick={onButtonClick}
@@ -71,7 +87,7 @@
 	</div>
 
 	<div
-		class="options {optionsShown
+		class="options absolute top-[100%] {optionsShown
 			? 'anim'
 			: ''} flex flex-col items-center w-fit py-2 m-4 mt-0 rounded-xl z-[100] pointer-events-auto"
 		style={`
@@ -90,9 +106,8 @@
 				></div>
 			{/if}
 			<div
-				class="button-container {selectedIndex === i
-					? 'selected'
-					: ''} w-full flex flex-col items-center px-2.5 mx-16 my-0.5"
+				class="button-container {selectedIndex === i ? 'selected' : ''} 
+        w-full flex flex-col items-center px-2.5 mx-16 my-0.5"
 			>
 				<button
 					class="button w-full rounded-lg py-1.5"
@@ -105,7 +120,7 @@
 							<div class="indicator-dot w-2 h-2 rounded-full bg-white absolute left-5"></div>
 						{/if}
 						<span class="option-text text-xl font-[600]">
-							{option.text}
+							{option.label}
 						</span>
 					</div>
 				</button>

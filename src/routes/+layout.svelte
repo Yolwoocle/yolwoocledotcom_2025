@@ -2,6 +2,7 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import '../reset.css';
 	import '../app.css';
+	import Navbar from './Navbar.svelte';
 	import type { Snippet } from 'svelte';
 
 	let { children }: {
@@ -14,7 +15,8 @@
 </svelte:head>
 
 
-<div class="page">
+<div class="page flex flex-col">
+	<Navbar />
 	{@render children?.()}
 </div>
 
