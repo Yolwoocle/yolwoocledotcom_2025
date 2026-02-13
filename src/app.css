@@ -67,6 +67,12 @@ body {
 	margin: 0;
 }
 
+.card-link {
+	color: var(--green-text);
+	
+	text-decoration: underline;
+}
+
 @theme inline {
 	--color-dark: var(--main-dark);
 	--color-dark-shadow: var(--main-dark-shad);

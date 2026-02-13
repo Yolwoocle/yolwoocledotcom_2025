@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
 
-	let { title = '', img = '', imgAlt = '', onclick=(() => {}) } = $props();
+	let { title = '', description = '', img = '', imgAlt = '', starred = false, onclick=(() => {}) } = $props();
 
 	let ref: HTMLElement;
 
@@ -10,7 +10,7 @@
 </script>
 
 <button
-	class={cn('size-60 group')}
+	class={cn('w-60 h-70 group')}
 	{onclick}
 >
 	<div
@@ -33,8 +33,32 @@
 		{#if img}
 			<img src={img} alt={imgAlt} class="size-full object-cover rounded-xl" />
 		{/if}
-		<span class="mt-2">
+		<p class="mt-2 text-xl font-extrabold">
 			{title}
-		</span>
+		</p>
+		{#if description}
+			<p class="mt-2 text-md">
+				{@html description}
+			</p>
+		{/if}
+
+		{#if starred}
+			<img src="src/lib/assets/icons/star_outlined.png" alt="star" class="star w-10 absolute -top-4 -left-4"/>
+		{/if}
 	</div>
 </button>
+
+<style>
+	.star {
+		animation: constantRotation 8s linear infinite;
+	}
+
+	@keyframes constantRotation {
+		0% {
+			transform: rotate(0);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+</style>

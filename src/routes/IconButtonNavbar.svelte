@@ -28,22 +28,22 @@
 {#snippet buttonContent()}
 	<div
 		style={`
-    background-color: ${mainColor};
-    box-shadow:
-      inset 0px 0px 0px 5px ${secColor},
-      inset 0px 0px 0px 10px ${mainColor},
-      inset 0px 0px 0px 15px ${secColor},
-      0px 2px 0px ${shadColor},
-      0px 4px 0px ${shadColor},
-      0px 6px 0px ${shadColor},
-      0px 8px 0px ${shadColor},
-      0px 10px 0px ${shadColor},
-      2px 17px 0px var(--transp-shad);
-      color: ${textColor};
-    `}
+			background-color: ${mainColor};
+			box-shadow:
+			inset 0px 0px 0px 5px ${secColor},
+			inset 0px 0px 0px 10px ${mainColor},
+			inset 0px 0px 0px 15px ${secColor},
+			0px 2px 0px ${shadColor},
+			0px 4px 0px ${shadColor},
+			0px 6px 0px ${shadColor},
+			0px 8px 0px ${shadColor},
+			0px 10px 0px ${shadColor},
+			2px 17px 0px var(--transp-shad);
+			color: ${textColor};
+		`}
 		class={cn(
 			'relative',
-			'p-6 pt-12',
+			'p-6 pt-16',
 			'text-2xl text-center',
 			'rounded-b-3xl',
 			'translate-y-0',
@@ -58,26 +58,25 @@
 			style={`border-radius: ${borderRadius}`}
 		>
 			<!--button-container-->
-      
-      <div class="flex flex-col w-full items-center justify-center">
-        {#if icon}
-          <img class="icon" src={icon} {alt} />
-        {/if}
-        {#if iconSrc}
-          {@html iconSrc}
-        {/if}
+
+			<div class="flex flex-col w-full items-center justify-center">
+				{#if icon}
+					<img class="icon" src={icon} {alt} />
+				{/if}
+				{#if iconSrc}
+					{@html iconSrc}
+				{/if}
 			</div>
 		</div>
 	</div>
 {/snippet}
 
-
 {#if href}
-	<a class={cn('flex-0', 'group relative', 'h-fit', '-translate-y-10')} href={href}>
-    {@render buttonContent()}
-  </a>
+	<a class={cn('flex-0', 'group relative', 'h-fit', '-translate-y-14')} {href}>
+		{@render buttonContent()}
+	</a>
 {:else}
-	<button {onclick} class={cn('flex-0', 'group relative', 'h-fit', '-translate-y-10')}>
+	<button {onclick} class={cn('flex-0', 'group relative', 'h-fit', '-translate-y-14')}>
 		{@render buttonContent()}
 	</button>
 {/if}

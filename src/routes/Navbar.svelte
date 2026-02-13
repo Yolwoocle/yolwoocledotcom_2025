@@ -24,8 +24,8 @@
       iconOnly: true
     },
     {
-      title: 'Projects',
-      url: '/projects',
+      title: 'Games',
+      url: '/games',
       backgroundColor: 'var(--yellow-main)',
       secondaryColor: 'var(--yellow-sec)',
       shadingColor: 'var(--yellow-shad)',
@@ -92,7 +92,7 @@
           (page.iconOnly ? 'navbar-link-icon-only' : 'navbar-link-regular'),
           'navbar-link group relative',
           'h-fit',
-          '-translate-y-10'
+          '-translate-y-14'
         )}
         href={page.url}
       >
@@ -113,7 +113,7 @@
           `}
           class={cn(
             'relative',
-            'p-6 pt-12',
+            'p-6 pt-16',
             'text-2xl text-center',
             'rounded-b-3xl',
             'translate-y-0',

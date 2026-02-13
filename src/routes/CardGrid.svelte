@@ -16,8 +16,10 @@
     {#each cards as card, i}
       <Card
         title={card.label}
+        description={card.description}
         img={card.img}
         imgAlt={card.imgAlt}
+        starred={card?.starred}
         onclick={() => {
           modalShown = true;
           currentCardIndex = i;

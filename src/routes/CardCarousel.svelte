@@ -37,12 +37,17 @@
 				src={currentCard?.img}
 				alt={currentCard?.imgAlt}
 			/>
-			<h2 class="text-2xl mt-2 w-full text-center">
-				{currentCard?.label}
-			</h2>
-			<p class="text-xl mt-2 w-full text-center">
-				{currentCard?.des}
-			</p>
+			<div>
+				<h2 class="text-2xl mt-2 w-full text-center">
+					{currentCard?.label}
+				</h2>
+				<p class="text-xl mt-2 w-full text-center">
+					{@html currentCard?.description}
+				</p>
+			</div>
+			{#if currentCard?.starred}
+				<img src="src/lib/assets/icons/star_outlined.png" alt="star" class="star w-14 absolute -translate-10"/>
+			{/if}
 		</div>
 	</div>
 
@@ -60,7 +65,7 @@
 			}}
 		/>
 		<div
-			class="flex flex-row items-center justify-center rounded-full w-[120px] min-h-[65px] px-6 text-(--white-main) bg-(--main-dark)"
+			class="flex flex-row items-center justify-center rounded-full w-[150px] min-h-[65px] px-6 text-(--white-main) bg-(--main-dark)"
 			style={`
 				box-shadow:
 				inset 0px 0px 0px 5px var(--main-dark-shad),
@@ -90,3 +95,19 @@
 		/>
 	</div>
 </div>
+
+
+<style>
+	.star {
+		animation: constantRotation 8s linear infinite;
+	}
+
+	@keyframes constantRotation {
+		0% {
+			transform: rotate(0);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+</style>

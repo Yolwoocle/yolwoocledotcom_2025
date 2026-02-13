@@ -108,7 +108,7 @@
 			{/if}
 			<div
 				class="button-container {selectedIndex === i ? 'selected' : ''} 
-        w-full flex flex-col items-center px-2.5 mx-16 my-0.5"
+        		w-full flex flex-col items-center px-2.5 mx-16 my-0.5"
 			>
 				<button
 					class="button w-full rounded-lg py-1.5"

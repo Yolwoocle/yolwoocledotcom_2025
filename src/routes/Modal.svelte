@@ -23,7 +23,7 @@
 {#if modalShown}
 	<div 
 		onclick={handleBackdropClick}
-		class="z-100 absolute size-full top-0 left-0 flex justify-center items-center bg-[#0004]"
+		class="z-100 fixed size-full top-0 left-0 flex justify-center items-center bg-[#0004]"
 		style="backdrop-filter: blur(4px)"
 	>
 		{@render children?.()}

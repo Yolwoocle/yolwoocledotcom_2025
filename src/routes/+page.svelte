@@ -7,6 +7,7 @@
 	import IconButton from './IconButton.svelte';
 	import TextButton from './TextButton.svelte';
 	import LanguageSelect from './LanguageSelect.svelte';
+	import Socials from './Socials.svelte';
 </script>
 
 <main class="flex flex-col gap-6 grow py-10 overflow-hidden min-h-screen">
@@ -29,48 +30,7 @@
 		<BigStarButton href="#" buttonStyle={3} text="Other" />
 	</div> -->
 
-	<div class="nav nav-socials">
-		<IconButton
-			icon="/src/lib/assets/logos/email-white.svg"
-			alt="email"
-			href="mailto:leo@yolwoocle.com"
-			--mainColor="var(--main-dark)"
-			--secColor="var(--main-dark-shad)"
-			--shadColor="var(--main-dark-shad)"
-		/>
-		<IconButton
-			icon="/src/lib/assets/logos/bluesky-white.svg"
-			alt="bluesky"
-			href="https://bsky.app/profile/yolwoocle.com/"
-			--mainColor="var(--main-dark)"
-			--secColor="var(--main-dark-shad)"
-			--shadColor="var(--main-dark-shad)"
-		/>
-		<IconButton
-			icon="/src/lib/assets/logos/twitter-white.svg"
-			alt="twitter/x"
-			href="https://x.com/yolwoocle_/"
-			--mainColor="var(--main-dark)"
-			--secColor="var(--main-dark-shad)"
-			--shadColor="var(--main-dark-shad)"
-		/>
-		<IconButton
-			icon="/src/lib/assets/logos/itchio-white.svg"
-			alt="itchio"
-			href="https://yolwoocle.itch.io/"
-			--mainColor="var(--main-dark)"
-			--secColor="var(--main-dark-shad)"
-			--shadColor="var(--main-dark-shad)"
-		/>
-		<IconButton
-			icon="/src/lib/assets/logos/github-white.svg"
-			alt="github"
-			href="https://github.com/yolwoocle"
-			--mainColor="var(--main-dark)"
-			--secColor="var(--main-dark-shad)"
-			--shadColor="var(--main-dark-shad)"
-		/>
-	</div>
+	<Socials />
 </main>
 
 <style>
