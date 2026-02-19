@@ -20,38 +20,48 @@
 
 <div class="flex flex-col items-center h-full pointer-events-none">
 	<div
-		class="flex flex-row max-w-3/4 items-center gap-3 grow-1 pt-[32px] pb-[128px] overflow-hidden"
+		class="flex flex-row max-w-[800px] items-center gap-3 grow-1 pt-[32px] pb-[128px] overflow-hidden"
 	>
 		<div
 			class={cn(
 				'pointer-events-auto',
 				'flex flex-col overflow-hidden',
-				'w-fit max-h-full',
+				'max-h-full', 
 				'overflow-scroll',
-				'p-5 rounded-3xl',
+				'm-6 p-5 rounded-3xl',
 				'bg-(--white-main) shadow-[2px_8px_0px_var(--transp-shad)]'
 			)}
 		>
 			<img
-				class="rounded-xl font-black size-full object-contain mb-3"
+				class="rounded-xl font-black size-full min-h-[400px] object-contain mb-3"
 				src={currentCard?.img}
 				alt={currentCard?.imgAlt}
 			/>
 			<div>
-				<h2 class="text-2xl mt-2 w-full text-center">
-					{currentCard?.label}
-				</h2>
+				<p class="text-md mt-2 w-full text-center text-(--white-text)">
+					{currentCardIndex + 1} / {cards.length}
+				</p>
+				<div class="flex flex-row -mt-1 gap-3 items-center justify-center">
+					{#if currentCard?.starred}
+						<img src="src/lib/assets/icons/star_outlined.png" alt="star" class="star w-8"/>
+					{/if}
+					<h2 class="text-2xl text-center">
+						{currentCard?.label}
+					</h2>
+				</div>
 				<p class="text-xl mt-2 w-full text-center">
 					{@html currentCard?.description}
 				</p>
+				{#if currentCard?.longDescription}
+					<p class="text-lg mt-2 w-full text-left">
+						{@html currentCard?.longDescription}
+					</p>
+				{/if}
 			</div>
-			{#if currentCard?.starred}
-				<img src="src/lib/assets/icons/star_outlined.png" alt="star" class="star w-14 absolute -translate-10"/>
-			{/if}
 		</div>
 	</div>
 
-	<div
+	<!-- <div
 		class="pointer-events-auto absolute bottom-0 flex flex-row items-center justify-center gap-3 grow-0 p-8"
 	>
 		<IconButton
@@ -64,24 +74,6 @@
 				previousCard();
 			}}
 		/>
-		<div
-			class="flex flex-row items-center justify-center rounded-full w-[150px] min-h-[65px] px-6 text-(--white-main) bg-(--main-dark)"
-			style={`
-				box-shadow:
-				inset 0px 0px 0px 5px var(--main-dark-shad),
-				0px 2px 0px var(--main-dark-shad),
-				0px 4px 0px var(--main-dark-shad),
-				0px 6px 0px var(--main-dark-shad),
-				0px 8px 0px var(--main-dark-shad),
-				0px 10px 0px var(--main-dark-shad),
-				2px 17px 0px var(--transp-shad);
-			`}
-		>
-			<span class="text-2xl">
-				{currentCardIndex + 1} / {cards.length}
-			</span>
-		</div>
-
 		<IconButton
 			icon="/src/lib/assets/icons/arrow_right.svg"
 			alt="email"
@@ -94,7 +86,8 @@
 			}}
 		/>
 	</div>
-</div>
+	-->
+</div> 
 
 
 <style>

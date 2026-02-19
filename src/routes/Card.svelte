@@ -1,7 +1,20 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
 
-	let { title = '', description = '', img = '', imgAlt = '', starred = false, onclick=(() => {}) } = $props();
+	let {
+		title = '',
+		description = '',
+		longDescription = '',
+		img = '',
+		imgAlt = '',
+		
+		width='240px',
+		height='280px',
+		starred = false,
+		showTitle = true,
+
+		onclick = (() => {}),
+	} = $props();
 
 	let ref: HTMLElement;
 
@@ -9,8 +22,13 @@
 	let cardRotation = $state(initialCardRotation);
 </script>
 
-<button
-	class={cn('w-60 h-70 group')}
+<button 
+	class={cn('group')} 
+	style={
+		`width: ${width};` + 
+		`height: ${height};`
+	} 
+	
 	{onclick}
 >
 	<div
@@ -31,19 +49,27 @@
 		)}
 	>
 		{#if img}
-			<img src={img} alt={imgAlt} class="size-full object-cover rounded-xl" />
+			<div class="flex-grow min-h-0">
+				<img src={img} alt={imgAlt} class="size-full object-cover rounded-xl" />
+			</div>
 		{/if}
-		<p class="mt-2 text-xl font-extrabold">
-			{title}
-		</p>
+		{#if showTitle}
+			<p class="mt-3 text-xl font-extrabold">
+				{title}
+			</p>
+		{/if}
 		{#if description}
-			<p class="mt-2 text-md">
+			<p class="flex-0 mt-2 text-md">
 				{@html description}
 			</p>
 		{/if}
 
 		{#if starred}
-			<img src="src/lib/assets/icons/star_outlined.png" alt="star" class="star w-10 absolute -top-4 -left-4"/>
+			<img
+				src="src/lib/assets/icons/star_outlined.png"
+				alt="star"
+				class="star w-10 absolute -top-4 -left-4"
+			/>
 		{/if}
 	</div>
 </button>
