@@ -32,16 +32,35 @@
 				'bg-(--white-main) shadow-[2px_8px_0px_var(--transp-shad)]'
 			)}
 		>
-			<img
-				class="rounded-xl font-black size-full min-h-[400px] object-contain mb-3"
-				src={currentCard?.img}
-				alt={currentCard?.imgAlt}
-			/>
+			{#if currentCard?.trailer}
+				<iframe 
+					width="560" 
+					height="315" 
+					src={currentCard.trailer} 
+					title="YouTube video player" 
+					frameborder="0" 
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+					referrerpolicy="strict-origin-when-cross-origin" 
+					allowfullscreen>
+				</iframe>
+			{:else if currentCard?.carouselImg}
+				<img
+					class="rounded-xl font-black size-full min-h-[400px] object-contain mb-3"
+					src={currentCard?.carouselImg}
+					alt={currentCard?.carouselImgAlt}
+				/>
+			{:else}
+				<img
+					class="rounded-xl font-black size-full min-h-[400px] object-contain mb-3"
+					src={currentCard?.img}
+					alt={currentCard?.imgAlt}
+				/>
+			{/if}
 			<div>
 				<p class="text-md mt-2 w-full text-center text-(--white-text)">
 					{currentCardIndex + 1} / {cards.length}
 				</p>
-				<div class="flex flex-row -mt-1 gap-3 items-center justify-center">
+				<div class="flex flex-row mt-1 gap-3 items-center justify-center">
 					{#if currentCard?.starred}
 						<img src="src/lib/assets/icons/star_outlined.png" alt="star" class="star w-8"/>
 					{/if}
@@ -49,9 +68,11 @@
 						{currentCard?.label}
 					</h2>
 				</div>
-				<p class="text-xl mt-2 w-full text-center">
-					{@html currentCard?.description}
-				</p>
+				{#if currentCard?.description}
+					<p class="text-xl mt-2 w-full text-center">
+						{@html currentCard?.description}
+					</p>
+				{/if}
 				{#if currentCard?.longDescription}
 					<p class="text-lg mt-2 w-full text-left">
 						{@html currentCard?.longDescription}
@@ -61,7 +82,7 @@
 		</div>
 	</div>
 
-	<!-- <div
+	<div
 		class="pointer-events-auto absolute bottom-0 flex flex-row items-center justify-center gap-3 grow-0 p-8"
 	>
 		<IconButton
@@ -86,7 +107,6 @@
 			}}
 		/>
 	</div>
-	-->
 </div> 
 
 

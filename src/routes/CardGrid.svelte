@@ -40,6 +40,8 @@
             longDescription={card.longDescription}
             img={card.img}
             imgAlt={card.imgAlt}
+            carouselImg={card.carouselImg}
+            carouselImgAlt={card.carouselImgAlt}
 
             width={(card?.cardType == "large") ? "372px" : cardWidth}
             height={(card?.cardType == "large") ? "280px" : cardHeight}

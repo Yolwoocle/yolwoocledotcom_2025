@@ -7,6 +7,8 @@
 		longDescription = '',
 		img = '',
 		imgAlt = '',
+		carouselImg = '',
+		carouselImgAlt = '',
 		
 		width='240px',
 		height='280px',
