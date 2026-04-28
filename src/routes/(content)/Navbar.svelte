@@ -44,8 +44,8 @@
       iconOnly: false
     },
     {
-      title: 'Other',
-      url: '/other',
+      title: 'Projects',
+      url: '/projects',
       backgroundColor: 'var(--pink-main)',
       secondaryColor: 'var(--pink-sec)',
       shadingColor: 'var(--pink-shad)',
@@ -137,7 +137,7 @@
       </a>
     {/each}
     <!-- <IconButtonNavbar /> -->
-    <LanguageSelectAlt />
+    <!-- <LanguageSelectAlt /> -->
   </div>
 </nav>
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Socials from "../../Socials.svelte";
-	import TextButton from "../../TextButton.svelte";
+	import Socials from "../Socials.svelte";
+	import TextButton from "../TextButton.svelte";
 
   const birthDate = new Date('2004-12-07');
   const today = new Date();
@@ -23,26 +23,29 @@
             <img src="src/lib/assets/images/hileo.gif" alt="drawing of leo" class="h-90"/>
         </div>
         <h1 class="font-black text-8xl pt-6 pb-4">Hi!</h1>
-        <p class="text-2xl/10">
-            I’m <strong>Léo Bernard</strong>, also known as <strong>Yolwoocle</strong>.<br>
-            I’m <span>{age}</span> years old and I'm from France.<br>
-            I’ve loved making things ever since I was a child. <br>
+        <p class="text-2xl/10 pb-7">
+            I'm <strong>Léo Bernard</strong>, also known as <strong>Yolwoocle</strong>.<br>
+            I'm <span>{age}</span> years old and I'm from France.<br>
+            I've loved making things ever since I was a child. <br>
             I believe that creating things is deeply human. <br>
-            It’s something that brings me joy in my life, <br>    
+            It's something that brings me joy in my life, <br>    
             And I hope to share this joy to others through my creations. :)
+        </p>
+        <p class="text-xl/8">
+            I also occasionally enjoy cycling, hiking, baking, and learning French Sign Language.  
         </p>
 
         <h1 class="font-black text-6xl pt-10 pb-4">Contact</h1>
-        <p class="text-2xl/10">
+        <p class="text-xl/8">
             Here you can find various ways to contact me. <br>
             I read every message, but I might not always answer. <br>
             Please prioritize email for business-related enquiries.  
         </p>
         <Socials />
-        <p class="text-2xl/10 pt-10">
+        <p class="text-xl/10 pt-10">
             <strong>Discord:</strong> yo&#108woocl&#101<br>
             <strong>Email:</strong> &#108eo&#64yo&#108woocl&#101&#46com<br>
-            (email responses may come from a dfferent address)<br>
+            (email responses may come from a different address)<br>
         </p>
 
         <h1 class="font-black text-6xl pt-10 pb-4">Resume</h1>

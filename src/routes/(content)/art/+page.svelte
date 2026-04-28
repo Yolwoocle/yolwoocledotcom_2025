@@ -1,8 +1,18 @@
 <script lang="ts">
-	import CardGrid from '../../CardGrid.svelte';
+	import CardGrid from '../CardGrid.svelte';
 
 	let projects = [
 		[
+			{
+				img: 'src/lib/assets/images/art/ducks.gif',
+				label: '🦆🐤🐤🐤⠀⠀⠀🐤💦',
+				description: ''
+			},
+			{
+				img: 'src/lib/assets/images/art/formation_pixel_art.png',
+				label: 'Formation Pixel Art',
+				description: 'Poster made for a school activity'
+			},
 			{
 				img: 'src/lib/assets/images/art/fishduck.png',
 				label: '🐸💭🍗',
@@ -132,7 +142,7 @@
 			{
 				img: 'src/lib/assets/images/art/pico-8_unrailed_concept.png',
 				label: 'PICO-8 Unrailed Demake Mockup',
-				description: ''
+				description: '',
 			},
 			{
 				img: 'src/lib/assets/images/art/LCD Console Concept.png',
@@ -147,7 +157,8 @@
 			{
 				img: 'src/lib/assets/images/art/aquarium.gif',
 				label: 'Aquarium',
-				description: ''
+				description: '',
+				starred: true,
 			},
 			{
 				img: 'src/lib/assets/images/art/microchipCity_watermark.png',

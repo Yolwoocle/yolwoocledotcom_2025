@@ -27,7 +27,7 @@
 <button 
 	class={cn('group')} 
 	style={
-		`width: ${width};` + 
+		`max-width: ${width};` + 
 		`height: ${height};`
 	} 
 	
@@ -38,7 +38,7 @@
 		class={cn(
 			'relative size-full flex flex-col',
 			'pointer-events-none',
-			'bg-white rounded-2xl p-3',
+			'rounded-2xl p-3',
 			'transition-[all,box-shadow_200ms_ease]',
 			'ease-(--ease-out-back) duration-300',
 
@@ -49,6 +49,7 @@
 			'group-hover:-rotate-2',
 			'group-hover:shadow-[3px_16px_0px_var(--transp-shad)]',
 		)}
+		style={`background-color: ${starred ? '#fff4db' : '#fff'}`}
 	>
 		{#if img}
 			<div class="flex-grow min-h-0">
@@ -61,7 +62,7 @@
 			</p>
 		{/if}
 		{#if description}
-			<p class="flex-0 mt-2 text-md">
+			<p class="description flex-0 mt-2 text-md">
 				{@html description}
 			</p>
 		{/if}
@@ -88,5 +89,11 @@
 		100% {
 			transform: rotate(360deg);
 		}
+	}
+
+	.description a {
+		color: var(--pink-text);
+		
+		text-decoration: underline;
 	}
 </style>

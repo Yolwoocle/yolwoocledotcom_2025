@@ -29,15 +29,15 @@
 				'max-h-full', 
 				'overflow-scroll',
 				'm-6 p-5 rounded-3xl',
-				'bg-(--white-main) shadow-[2px_8px_0px_var(--transp-shad)]'
+				'shadow-[2px_8px_0px_var(--transp-shad)]'
 			)}
+			style={`background-color: ${currentCard?.starred ? '#fff4db' : '#fff'}`}
 		>
 			{#if currentCard?.trailer}
 				<iframe 
-					width="560" 
-					height="315" 
 					src={currentCard.trailer} 
 					title="YouTube video player" 
+					style="width:100%; aspect-ratio: 16/9;"
 					frameborder="0" 
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 					referrerpolicy="strict-origin-when-cross-origin" 
@@ -56,8 +56,9 @@
 					alt={currentCard?.imgAlt}
 				/>
 			{/if}
+
 			<div>
-				<p class="text-md mt-2 w-full text-center text-(--white-text)">
+				<p class="text-md mt-3 w-full text-center text-(--white-text)">
 					{currentCardIndex + 1} / {cards.length}
 				</p>
 				<div class="flex flex-row mt-1 gap-3 items-center justify-center">
@@ -74,9 +75,18 @@
 					</p>
 				{/if}
 				{#if currentCard?.longDescription}
-					<p class="text-lg mt-2 w-full text-left">
+					<p class="long-description text-lg mt-2 w-full text-left">
 						{@html currentCard?.longDescription}
 					</p>
+				{/if}
+				{#if currentCard?.links}
+					<div class="flex w-full gap-5 justify-center">
+						{#each currentCard?.links as linkInfo}
+							<a class="card-link text-lg mt-2 text-left" href={linkInfo.link}>
+								{linkInfo.label}
+							</a>
+						{/each}
+					</div>
 				{/if}
 			</div>
 		</div>
@@ -122,5 +132,10 @@
 		100% {
 			transform: rotate(360deg);
 		}
+	}
+	.long-description a {
+		color: var(--pink-text);
+		
+		text-decoration: underline;
 	}
 </style>

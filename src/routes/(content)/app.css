@@ -68,7 +68,7 @@ body {
 }
 
 .card-link {
-	color: var(--green-text);
+	color: var(--pink-text);
 	
 	text-decoration: underline;
 }
