@@ -15,7 +15,7 @@
 				`,
 				img : "/assets/images/games/bugscraper/thumbnail.png",
 				imgAlt : "Bugscraper key art",
-				carouselImg : "./img/games/bugscraper/gameplay.gif",
+				carouselImg : "/assets/images/games/bugscraper/gameplay.gif",
 				carouselImgAlt : "Bugscraper gameplay gif",
 				trailer : "https://www.youtube.com/embed/a4RG1y2lU4E",
 				links: [
