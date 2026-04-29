@@ -77,7 +77,7 @@
 	<div class="p-4 pointer-events-auto">
 		<IconButton
 			onclick={onButtonClick}
-			icon="/src/lib/assets/logos/language-white.svg"
+			icon="//assets/logos/language-white.svg"
 			alt="JSP"
 			borderRadius="15px"
 			--mainColor={mainColor}

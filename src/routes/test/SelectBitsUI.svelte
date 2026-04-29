@@ -41,7 +41,7 @@
 		)}
 	>
 		<div bind:this={anchorRef} class="absolute bottom-0 left-0"></div>
-		<img class="size-7" src="/src/lib/assets/logos/language-white.svg" alt="Globe" />
+		<img class="size-7" src="//assets/logos/language-white.svg" alt="Globe" />
 	</Select.Trigger>
 	<Select.Portal>
 		<Select.Content

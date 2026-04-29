@@ -20,7 +20,7 @@
     </div> -->
     <div class="max-w-215 px-5 py-10 flex flex-col items-center text-center text-(--main-very-dark)">
         <div class="py-15">
-            <img src="src/lib/assets/images/hileo.gif" alt="drawing of leo" class="h-90"/>
+            <img src="/assets/images/hileo.gif" alt="drawing of leo" class="h-90"/>
         </div>
         <h1 class="font-black text-8xl pt-6 pb-4">Hi!</h1>
         <p class="text-2xl/10 pb-7">

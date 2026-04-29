@@ -63,7 +63,7 @@
 				</p>
 				<div class="flex flex-row mt-1 gap-3 items-center justify-center">
 					{#if currentCard?.starred}
-						<img src="src/lib/assets/icons/star_outlined.png" alt="star" class="star w-8"/>
+						<img src="/assets/icons/star_outlined.png" alt="star" class="star w-8"/>
 					{/if}
 					<h2 class="text-2xl text-center">
 						{currentCard?.label}
@@ -96,7 +96,7 @@
 		class="pointer-events-auto absolute bottom-0 flex flex-row items-center justify-center gap-3 grow-0 p-8"
 	>
 		<IconButton
-			icon="/src/lib/assets/icons/arrow_left.svg"
+			icon="//assets/icons/arrow_left.svg"
 			alt="email"
 			--mainColor="var(--main-dark)"
 			--secColor="var(--main-dark-shad)"
@@ -106,7 +106,7 @@
 			}}
 		/>
 		<IconButton
-			icon="/src/lib/assets/icons/arrow_right.svg"
+			icon="//assets/icons/arrow_right.svg"
 			alt="email"
 			--mainColor="var(--main-dark)"
 			--secColor="var(--main-dark-shad)"

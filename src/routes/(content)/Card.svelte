@@ -69,7 +69,7 @@
 
 		{#if starred}
 			<img
-				src="src/lib/assets/icons/star_outlined.png"
+				src="/assets/icons/star_outlined.png"
 				alt="star"
 				class="star w-10 absolute -top-4 -left-4"
 			/>

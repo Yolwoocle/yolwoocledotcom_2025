@@ -16,9 +16,9 @@
 
 				It was made with the idea of having being borderless, in its team, but also in its ideas.<br><br>
 				`,
-				img : "src/lib/assets/images/projects/ninesliced/ninesliced_games_key.png",
+				img : "/assets/images/projects/ninesliced/ninesliced_games_key.png",
 				imgAlt : "",
-				carouselImg : "src/lib/assets/images/projects/ninesliced/ninesliced_games_linkedin_intro_post.png",
+				carouselImg : "/assets/images/projects/ninesliced/ninesliced_games_linkedin_intro_post.png",
 				carouselImgAlt : "",
 				trailer : null,
 				links: [
@@ -38,9 +38,9 @@
 				and 3blue1brown's <a class='card-link' href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">
 				excellent video series</a> on this topic. 
 				`,
-				img : "src/lib/assets/images/projects/algebra/linearalgebra.png",
+				img : "/assets/images/projects/algebra/linearalgebra.png",
 				imgAlt : "",
-				carouselImg : "src/lib/assets/images/projects/algebra/linearalgebra.png",
+				carouselImg : "/assets/images/projects/algebra/linearalgebra.png",
 				carouselImgAlt : "",
 				trailer : null,
 				links: [
@@ -62,7 +62,7 @@
 				I even got to meet jeb!
 				By the way, inside the costume is my little sister! She said it was really hot inside. 
 				`,
-				img : "src/lib/assets/images/projects/minecon/image.png",
+				img : "/assets/images/projects/minecon/image.png",
 				imgAlt : "",
 				carouselImg : null,
 				// carouselImgAlt : "",
@@ -85,7 +85,7 @@
 			Projects I am particularily proud of have a
 			<span>
 				<img
-					src="src/lib/assets/icons/star_outlined.png"
+					src="/assets/icons/star_outlined.png"
 					alt="star"
 					class="star w-8 relative"
 				/>

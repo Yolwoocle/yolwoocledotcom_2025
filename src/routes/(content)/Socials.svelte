@@ -4,7 +4,7 @@
 
 <div class="nav nav-socials">
 	<IconButton
-		icon="/src/lib/assets/logos/email-white.svg"
+		icon="//assets/logos/email-white.svg"
 		alt="email"
 		href="mailto:leo@yolwoocle.com"
 		--mainColor="var(--main-dark)"
@@ -12,7 +12,7 @@
 		--shadColor="var(--main-dark-shad)"
 	/>
 	<IconButton
-		icon="/src/lib/assets/logos/bluesky-white.svg"
+		icon="//assets/logos/bluesky-white.svg"
 		alt="bluesky"
 		href="https://bsky.app/profile/yolwoocle.com/"
 		--mainColor="var(--main-dark)"
@@ -20,7 +20,7 @@
 		--shadColor="var(--main-dark-shad)"
 	/>
 	<IconButton
-		icon="/src/lib/assets/logos/twitter-white.svg"
+		icon="//assets/logos/twitter-white.svg"
 		alt="twitter/x"
 		href="https://x.com/yolwoocle_/"
 		--mainColor="var(--main-dark)"
@@ -28,7 +28,7 @@
 		--shadColor="var(--main-dark-shad)"
 	/>
 	<IconButton
-		icon="/src/lib/assets/logos/itchio-white.svg"
+		icon="//assets/logos/itchio-white.svg"
 		alt="itchio"
 		href="https://yolwoocle.itch.io/"
 		--mainColor="var(--main-dark)"
@@ -36,7 +36,7 @@
 		--shadColor="var(--main-dark-shad)"
 	/>
 	<IconButton
-		icon="/src/lib/assets/logos/linkedin-white.svg"
+		icon="//assets/logos/linkedin-white.svg"
 		alt="linkedin"
 		href="https://www.linkedin.com/in/yolwoocle/"
 		--mainColor="var(--main-dark)"
@@ -44,7 +44,7 @@
 		--shadColor="var(--main-dark-shad)"
 	/>
 	<IconButton
-		icon="/src/lib/assets/logos/github-white.svg"
+		icon="//assets/logos/github-white.svg"
 		alt="github"
 		href="https://github.com/yolwoocle"
 		--mainColor="var(--main-dark)"

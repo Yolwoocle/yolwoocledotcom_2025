@@ -53,7 +53,7 @@
 	<NavigationMenu.List class="group flex flex-row list-none items-center justify-center p-1">
 		<NavigationMenu.Item>
 			<NavigationMenu.Link href="/" class="flex flex-row">
-				<!-- <img src="/src/lib/assets/logos/email-white.svg" alt="email" /> -->
+				<!-- <img src="//assets/logos/email-white.svg" alt="email" /> -->
 				<span>erkorzek</span>
 			</NavigationMenu.Link>
 

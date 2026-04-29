@@ -13,7 +13,7 @@
 				longDescription : `Welcome to the Bugscraper.<br>
 				Bugscraper is a solo or co-op roguelike shooter. As you climb toward your tyrannical boss's office, you'll battle floor after floor of enemies. Using a wide arsenal of weapons and upgrades, mow them down and aim for the top!<br>
 				`,
-				img : "src/lib/assets/images/games/bugscraper/thumbnail.png",
+				img : "/assets/images/games/bugscraper/thumbnail.png",
 				imgAlt : "Bugscraper key art",
 				carouselImg : "./img/games/bugscraper/gameplay.gif",
 				carouselImgAlt : "Bugscraper gameplay gif",
@@ -37,7 +37,7 @@
 				
 				This game was originally made in 96 hours for the <a href="https://itch.io/jam/gmtk-2024">GMTK Game Jam 2024</a> based on the theme "Built to Scale", but we continued working on it afterwards. 
 				`,
-				img : "src/lib/assets/images/games/globs/thumbnail.png",
+				img : "/assets/images/games/globs/thumbnail.png",
 				imgAlt : "Globs key art",
 				carouselImg : "./img/games/globs/screenshot.png",
 				carouselImgAlt : "Globs screenshot",
@@ -60,7 +60,7 @@
 				label : "Birds With Guns",
 				description : "Mess with the Flock, you get the Glock",
 				longDescription : `Are you ready to have a quacking time? Toucan play this egg-citing game right now! Made by an im-peck-able team of quail-ified developers, you're gonna have no egrets. <b>Birds With Guns</b> is a game I made with a friend over the course of a vacation.`,
-				img : "src/lib/assets/images/games/bwg/bird_thumbnail.png",
+				img : "/assets/images/games/bwg/bird_thumbnail.png",
 				imgAlt : "",
 				carouselImg : null, //"./img/games/bwg/gif/bwg_1.gif",
 				carouselImgAlt : "",
@@ -82,9 +82,9 @@
 				to make something I could actually finish. Nonetherless, I'm quite pleased with how it turned out.<br><br>
 				I sent my game by email to Edward Jung, one of the two creators of the original game, and he seemed to love it, which made me very happy.
 				`,
-				img : "src/lib/assets/images/games/picodino/thumbnail.png",
+				img : "/assets/images/games/picodino/thumbnail.png",
 				imgAlt : "Pico Dino thumbnail. A dinosaur jumps over cacti in a black and white pixel art desert",
-				carouselImg : "src/lib/assets/images/games/picodino/picodino_60fps.gif",
+				carouselImg : "/assets/images/games/picodino/picodino_60fps.gif",
 				carouselImgAlt : "Black and white pixel art video game set in a desert featuring a dinosaur jumping over cacti and pterodactyls",
 				trailer: null, //"https://www.youtube.com/embed/XF79HG9XOaA",
 				links: [
@@ -116,15 +116,16 @@
 				equipped with weapons like swords and guns. If all players die, the game ends 
 				and all progress is lost permanently.<br><br>
 
-				The plugin is currently unfinished, but you can take a look at the source code on GitHub.
+				The plugin is currently unfinished and we're planning on continuing development at
+				a later date, but you can take a look at the presentation document.
 				`,
-				img : "src/lib/assets/images/games/shotcave/image.png",
+				img : "/assets/images/games/shotcave/image.png",
 				imgAlt : "",
 				// carouselImg : "./img/games/derailed/pico-8_unrailed_concept_thumbnail_wide.png",
 				// carouselImgAlt : "",
 				trailer: "https://www.youtube.com/embed/cx04yL7ZwMA",
 				links: [
-					{label: "GitHub", link: "https://github.com/TheodoreBillotte/Shotcave"},
+					{label: "Presentation Document", link: "https://github.com/ninesliced/shotcave-presentation/blob/main/README.md"},
 				]
 			},
 			{
@@ -146,9 +147,9 @@
 				During my attempts to make it work, I have rarely managed to make it
 				work across multiple computers, but it does work locally. I encourage you to take 
 				a look at the source code.`,
-				img : "src/lib/assets/images/games/minesweeper_royale/thumbnail.png",
+				img : "/assets/images/games/minesweeper_royale/thumbnail.png",
 				imgAlt : "",
-				carouselImg : "./img/games/minesweeper_royale/gameplay.png",
+				carouselImg : "/assets/images/games/minesweeper_royale/gameplay.png",
 				carouselImgAlt : "",
 				trailer : null, //"https://www.youtube.com/embed/jb6uOKTxTlc",
 				links : [
@@ -161,10 +162,18 @@
 				
 				label : "Derailed!",
 				description : "A co-op game about building tracks",
-				longDescription : `<b>Derailed!</b> is yet another PICO-8 game I made to challenge myself. It's a co-op game where you need to communicate with a friend to bring a train to its station. It's a fan-made demake of Unrailed!. After I made some concept art for a PICO-8 demake of this game, I thought it would be fun to actually turn it into a real thing. I hope that you'll have fun playing it, and maybe you can grab a friend to try it out.<br><br><i>(The game is unfinished, but it's playable nonetherless. I don't plan to finish it.)</i>`,
-				img : "src/lib/assets/images/games/derailed/pico-8_unrailed_concept_thumbnail.png",
+				longDescription : `<b>Derailed!</b> is yet another PICO-8 game I made to challenge myself. 
+				It's a co-op game where you need to communicate with a friend to bring a train to its 
+				station. It's a fan-made demake of Unrailed!. After I made some concept art for a 
+				PICO-8 demake of this game, I thought it would be fun to actually turn it into a 
+				real thing. I hope that you'll have fun playing it, and maybe you can grab a friend 
+				to try it out.<br><br>
+				
+				The game is unfinished, but it's playable nonetherless. 
+				I don't plan to finish it.`,
+				img : "/assets/images/games/derailed/pico-8_unrailed_concept_thumbnail.png",
 				imgAlt : "",
-				carouselImg : "./img/games/derailed/pico-8_unrailed_concept_thumbnail_wide.png",
+				carouselImg : "/assets/images/games/derailed/pico-8_unrailed_concept_thumbnail_wide.png",
 				carouselImgAlt : "",
 				trailer: null,
 				links: [
@@ -194,7 +203,7 @@
 				You play the role of a mischievous wizard, and with the help of your apprentice, you create masks. Alas, your customers are demanding, and so you wish to curse them. To do this, you must communicate with your friend to find out the right way to curse them using your trusty Manual.<br><br>
 				
 				This game is in French only. It was created for <a class="card-link" href="https://globalgamejam.org/games/2026">Global Game Jam 2026.</a>`,
-				img : "src/lib/assets/images/games/bal_cosmique/itchio_thumbnail.png",
+				img : "/assets/images/games/bal_cosmique/itchio_thumbnail.png",
 				// imgAlt : "____________",
 				// carouselImg : "____________",
 				// carouselImgAlt : "____________",
@@ -214,9 +223,9 @@
 				Sort your cows into the right colors. The more cows you capture, the higher your combo and multiplier.<br><br>
 				
 				This game was created for the <a class="card-link" href="https://itch.io/jam/gmtk-2025">GMTK Game Jam 2025</a>.`,
-				img : "src/lib/assets/images/games/moomooranch/thumbnail_nologo.png",
+				img : "/assets/images/games/moomooranch/thumbnail_nologo.png",
 				imgAlt : "",
-				carouselImg : "src/lib/assets/images/games/moomooranch/screenshot.png",
+				carouselImg : "/assets/images/games/moomooranch/screenshot.png",
 				carouselImgAlt : "____________",
 				trailer : null,
 				links: [
@@ -235,9 +244,9 @@
 				
 				This game was created for <a class="card-link" href="https://ldjam.com/events/ludum-dare/57">Ludum Dare 57</a>.
 				`,
-				img : "src/lib/assets/images/games/gemchef/thumbnail_nologo.png",
+				img : "/assets/images/games/gemchef/thumbnail_nologo.png",
 				imgAlt : "",
-				carouselImg : "src/lib/assets/images/games/gemchef/game.png",
+				carouselImg : "/assets/images/games/gemchef/game.png",
 				carouselImgAlt : "",
 				trailer : null,
 				links: [
@@ -256,9 +265,9 @@
 				enemies and get to the bottom of the ocean!<br><br>
 				
 				This game was created for <a class="card-link" href="https://globalgamejam.org/games/2025/">Global Game Jam 2025</a>`,
-				img : "src/lib/assets/images/games/goldfish/thumbnail.png",
+				img : "/assets/images/games/goldfish/thumbnail.png",
 				imgAlt : "",
-				carouselImg : "src/lib/assets/images/games/goldfish/game.gif",
+				carouselImg : "/assets/images/games/goldfish/game.gif",
 				carouselImgAlt : "",
 				trailer : null,
 				links: [
@@ -281,9 +290,9 @@
 				<a class="card-link" href="https://itch.io/jam/gmtk-2024/">
 				GMTK Game Jam 2024</a>, and we continued working on it and then released on PC and mobile,
 				which you can learn more about on the corresponding slide on this page.`,
-				img : "src/lib/assets/images/games/globs-gmtk/thumbnail_gamejam_animated.gif",
+				img : "/assets/images/games/globs-gmtk/thumbnail_gamejam_animated.gif",
 				imgAlt : "",
-				carouselImg : "src/lib/assets/images/games/globs-gmtk/game.png",
+				carouselImg : "/assets/images/games/globs-gmtk/game.png",
 				carouselImgAlt : "",
 				trailer : null,
 				links: [
@@ -305,9 +314,9 @@
 				This game was created for 
 				<a class="card-link" href="https://itch.io/jam/gmtk-2023">
 				GMTK Game Jam 2023</a>`,
-				img : "src/lib/assets/images/games/switchjob/thumb.png",
+				img : "/assets/images/games/switchjob/thumb.png",
 				imgAlt : "",
-				carouselImg : "src/lib/assets/images/games/switchjob/game.png",
+				carouselImg : "/assets/images/games/switchjob/game.png",
 				carouselImgAlt : "",
 				trailer : null,
 				links: [
@@ -329,9 +338,9 @@
 
 				This game was made in 3 days with Louie Chapman for the Mini Jam 112, 
 				following the theme "Chrono" and limitation "Only three buttons".`,
-				img : "src/lib/assets/images/games/oraclesInn/OraclesInnThumnail.png",
+				img : "/assets/images/games/oraclesInn/OraclesInnThumnail.png",
 				imgAlt : "",
-				carouselImg : "src/lib/assets/images/games/oraclesInn/gameplay.gif",
+				carouselImg : "/assets/images/games/oraclesInn/gameplay.gif",
 				carouselImgAlt : "",
 				trailer : null,
 				links: [
@@ -352,9 +361,9 @@
 				This game was made within a tight ~6 hour period rather than the 50 hour 
 				period of the <a class="card-link" href="https://itch.io/jam/gmtk-jam-2022">
 				GMTK Game Jam 2022</a>, following the theme "Roll of the Dice"`,
-				img : "src/lib/assets/images/games/dicedropdash/thumb.png",
+				img : "/assets/images/games/dicedropdash/thumb.png",
 				imgAlt : "",
-				carouselImg : "src/lib/assets/images/games/dicedropdash/game.gif",
+				carouselImg : "/assets/images/games/dicedropdash/game.gif",
 				carouselImgAlt : "",
 				trailer : null,
 				links: [
@@ -374,9 +383,9 @@
 				toxic gas is escaping! Flee! Your bomb is your weapon. Throw it on 
 				enemies, and catch it before it explodes. The longer you let it 
 				fly, the more points it’ll give you, but this is at your own risk.`,
-				img : "src/lib/assets/images/games/octoboom/thumbnail.png",
+				img : "/assets/images/games/octoboom/thumbnail.png",
 				imgAlt : "",
-				carouselImg : "src/lib/assets/images/games/octoboom/screenshot2.png",
+				carouselImg : "/assets/images/games/octoboom/screenshot2.png",
 				carouselImgAlt : "",
 				trailer : null, //"https://www.youtube.com/embed/jb6uOKTxTlc",
 				links : [
@@ -395,9 +404,9 @@
 				
 				Made for <a class="card-link" href="https://ldjam.com/events/ludum-dare/48">Ludum Dare 48</a> 
 				based on the theme "Deeper and deeper".`,
-				img : "src/lib/assets/images/games/anchorsAndMiners/thumbnail3.png",
+				img : "/assets/images/games/anchorsAndMiners/thumbnail3.png",
 				imgAlt : "",
-				carouselImg : "src/lib/assets/images/games/anchorsAndMiners/screennormal.png",
+				carouselImg : "/assets/images/games/anchorsAndMiners/screennormal.png",
 				carouselImgAlt : "",
 				trailer : null, //"https://www.youtube.com/embed/jb6uOKTxTlc",
 				links : [
@@ -407,6 +416,7 @@
 			}, 
 			{
 				cardType : "normal",
+				starred: true,
 				
 				label : "Chaser Of Dawn",
 				description : "A game about looping around a planet.",
@@ -416,7 +426,7 @@
 				The game was inspired by exoplanets that don't rotate and have a very big difference in temperature
 				between their two sides.<br>
 				It was a lot of fun and we hope to do more games like this in the future!`,
-				img : "src/lib/assets/images/games/chaserofdawn/chaserofdawn_miniature.png",
+				img : "/assets/images/games/chaserofdawn/chaserofdawn_miniature.png",
 				imgAlt : "",
 				carouselImg : null,//"./img/games/chaserofdawn/chaserofdawn_1.png",
 				carouselImgAlt : "",
@@ -444,9 +454,9 @@
 				label : "Discord Simulator (100% accurate)",
 				description : "@everyone @everyone @everyone @everyone @everyone @everyone",
 				longDescription : `@everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone @everyone`,
-				img : "src/lib/assets/images/games/discordsim/thumb.png",
+				img : "/assets/images/games/discordsim/thumb.png",
 				imgAlt : "",
-				carouselImg : "src/lib/assets/images/games/discordsim/game.gif",
+				carouselImg : "/assets/images/games/discordsim/game.gif",
 				carouselImgAlt : "",
 				trailer: null,
 				links: [
@@ -462,16 +472,15 @@
 	<div class="max-w-215 px-5 text-center text-(--main-very-dark)">
 		<h1 class="font-black text-4xl pt-6 pb-4">Games</h1>
 		<p class="text-xl">
-			Here is a collection of some of my games. <br />
 			Projects I am particularily proud of have a
 			<span>
 				<img
-					src="src/lib/assets/icons/star_outlined.png"
+					src="/assets/icons/star_outlined.png"
 					alt="star"
 					class="star w-8 relative"
 				/>
             </span> next to them.<br>
-			You can find all projects on my <a class="card-link" href="https://yolwoocle.itch.io/">itch.io</a>.
+			You can find most projects on my <a class="card-link" href="https://yolwoocle.itch.io/">itch.io</a>.
 		</p>
 		<CardGrid cards={projects} cardWidth="240px" cardHeight="320px" />
 	</div>
