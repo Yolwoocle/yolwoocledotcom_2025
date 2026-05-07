@@ -1,4 +1,6 @@
-# sv
+# ninesliced.com
+
+Site for Yolwoocle: [yolwoocle.com](https://yolwoocle.com)
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
